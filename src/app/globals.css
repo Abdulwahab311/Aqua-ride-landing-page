@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #00B4D8;
+  --color-primary-end: #2196F3;
+  --color-secondary: #EEF6FF;
+  --color-accent: #0076FE;
+  --color-background: #FFFFFF;
+  --color-foreground: #03045E;
+  --color-card: #F8FAFC;
+  --color-border: #E1E1E1;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #03045E;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+button,
+[role="button"],
+a {
+  cursor: pointer;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-slate-200/50 shadow-sm;
+  }
+
+  .glass-premium {
+    @apply bg-white/40 backdrop-blur-3xl border border-white/60 relative overflow-hidden;
+  }
+
+  .glass-premium::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-white/30 to-transparent pointer-events-none;
+  }
+
+  .glass-dark {
+    @apply bg-slate-900/5 backdrop-blur-2xl border border-slate-200/10;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 180, 216, 0.2);
+  }
+
+  .bg-mesh {
+    background-image:
+      radial-gradient(at 0% 0%, rgba(0, 180, 216, 0.03) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(0, 180, 216, 0.02) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(0, 180, 216, 0.02) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(0, 180, 216, 0.03) 0px, transparent 50%);
+  }
+
+  .shadow-premium {
+    box-shadow: 0 25px 50px -12px rgba(0, 180, 216, 0.08);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05070A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
