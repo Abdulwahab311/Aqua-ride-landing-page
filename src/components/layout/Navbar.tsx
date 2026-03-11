@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center gap-10 text-[13px] font-bold uppercase tracking-widest text-foreground/50">
-          {["How it Works", "Features", "Business Portal"].map((item) => (
+          {["About Us", "Services", "How it Works", "Features", "Business Portal"].map((item) => (
             <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, "-")}`} className="hover:text-primary transition-colors duration-300 cursor-pointer">
               {item}
             </a>
@@ -45,9 +45,6 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="hidden sm:block px-8 py-3 bg-primary text-white text-sm font-black rounded-full hover:bg-primary/90 transition-all duration-300 active:scale-95 shadow-lg shadow-primary/20 cursor-pointer">
-            GET THE APP
-          </button>
           <button 
             className="lg:hidden text-foreground cursor-pointer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -66,7 +63,7 @@ const Navbar = () => {
             className="lg:hidden bg-white backdrop-blur-2xl border-b border-slate-200 overflow-hidden"
           >
             <div className="p-6 flex flex-col gap-6 text-center font-bold uppercase tracking-widest text-sm">
-              {["How it Works", "Features", "Business Portal"].map((item) => (
+              {["About Us", "Services", "How it Works", "Features", "Business Portal"].map((item) => (
                 <a 
                   key={item} 
                   href={`#${item.toLowerCase().replace(/\s+/g, "-")}`} 
@@ -76,9 +73,6 @@ const Navbar = () => {
                   {item}
                 </a>
               ))}
-              <button className="w-full py-4 bg-primary text-white rounded-2xl cursor-pointer">
-                GET THE APP
-              </button>
             </div>
           </motion.div>
         )}

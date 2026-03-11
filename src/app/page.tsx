@@ -12,10 +12,13 @@ import LoadingScreen from "@/components/layout/LoadingScreen";
 
 // Section components
 import Hero from "@/components/sections/Hero";
+import AboutUs from "@/components/sections/AboutUs";
+import Services from "@/components/sections/Services";
 import ProblemSolution from "@/components/sections/ProblemSolution";
 import ProcessSteps from "@/components/sections/ProcessSteps";
 import Features from "@/components/sections/Features";
 import BusinessPortal from "@/components/sections/BusinessModel";
+import DownloadApp from "@/components/sections/DownloadApp";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -62,10 +65,13 @@ export default function Home() {
             <Navbar />
             <main>
               <Hero />
+              <AboutUs />
+              <Services />
               <ProblemSolution />
               <ProcessSteps />
               <Features />
               <BusinessPortal />
+              <DownloadApp />
 
               {/* Call to Action Section */}
               <section className="py-32 px-6">

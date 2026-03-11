@@ -188,61 +188,9 @@ const Hero = () => {
             AquaRide modernizes the water tanker ecosystem. We digitize water delivery by connecting customers with reliable tanker partners in real-time, making water access as simple as ordering a ride.
           </motion.p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-6 mb-16">
-            <motion.button 
-              whileHover={{ scale: 1.02 }}
-              animate={{
-                x: mousePos.x * 0.1,
-                y: mousePos.y * 0.1,
-              }}
-              className="group relative w-full sm:w-auto px-10 py-5 bg-[#00B4D8] text-white rounded-2xl font-black overflow-hidden active:scale-95 transition-all shadow-[0_20px_40px_-10px_rgba(0,180,216,0.4)] hover:shadow-[0_25px_50px_-12px_rgba(0,180,216,0.6)] cursor-pointer"
-            >
-              <span className="relative z-10 flex items-center justify-center gap-3 lowercase first-letter:uppercase">
-                book a tanker now <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-shimmer" />
-            </motion.button>
-            <button className="w-full sm:w-auto px-10 py-5 glass border-slate-200/60 text-foreground hover:bg-slate-50 rounded-2xl font-black flex items-center justify-center gap-3 transition-all active:scale-95 shadow-sm hover:shadow-md cursor-pointer">
-              <Play className="w-5 h-5 fill-[#00B4D8] text-[#00B4D8]" /> WATCH DEMO
-            </button>
-          </div>
+          {/* Removed CTA Buttons as requested */}
 
-          {/* New App Section */}
-          <div className="mb-16">
-            <p className="text-sm font-bold text-foreground/40 uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
-              <span className="w-8 h-px bg-slate-200"></span>
-              Experience the full ecosystem on mobile
-            </p>
-            <div className="flex flex-row items-center gap-2 sm:gap-4 overflow-x-auto pb-4 sm:pb-0 scrollbar-hide no-scrollbar">
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="flex flex-1 sm:flex-none items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-all group min-w-fit"
-              >
-                <svg viewBox="0 0 24 24" className="w-6 h-6 text-[#00B4D8]" fill="currentColor">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.1 2.48-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .76-3.27.82-1.31.05-2.31-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.36 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                </svg>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-bold text-foreground/40 leading-none uppercase tracking-tighter">Download on the</span>
-                  <span className="text-sm font-black text-foreground leading-tight">App Store</span>
-                </div>
-              </motion.a>
-
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="flex flex-1 sm:flex-none items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-all group min-w-fit"
-              >
-                <svg viewBox="0 0 24 24" className="w-6 h-6 text-[#00B4D8]" fill="currentColor">
-                  <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L18.65,16.21C19.11,16.48 19.5,16.48 19.9,16.21L21.3,15.4C21.7,15.17 22,14.65 22,14.07C22,13.5 21.7,13 21.3,12.75L16.81,10.12M14.69,12.87L3.92,2.38C4.15,2.27 4.41,2.21 4.69,2.21C5.07,2.21 5.44,2.32 5.77,2.5L14.69,7.74M14.69,16.26L5.77,21.5C5.44,21.68 5.07,21.79 4.69,21.79C4.41,21.79 4.15,21.73 3.92,21.62L14.69,11.13V12.87Z"/>
-                </svg>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-bold text-foreground/40 leading-none uppercase tracking-tighter">Get it on</span>
-                  <span className="text-sm font-black text-foreground leading-tight">Google Play</span>
-                </div>
-              </motion.a>
-            </div>
-          </div>
+          {/* Redundant store links removed, now in dedicated DownloadApp section */}
 
           <div className="grid grid-cols-3 sm:flex items-center gap-4 sm:gap-8 mobile-stats-fix">
             <div className="flex flex-col">

@@ -13,9 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AquaRide - Aqua Ride Delivery",
+  title: "AquaRide",
   description: "Modern on-demand water tanker delivery platform streamlining the ecosystem with real-time tracking, smart matching, and scheduled refills.",
   keywords: "water delivery, water tanker, on-demand water, aquaride, ghana water, water supply Ghana",
+  icons: {
+    icon: "/brand/logo.png",
+    apple: "/brand/logo.png",
+  },
 };
 
 export default function RootLayout({
