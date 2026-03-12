@@ -20,6 +20,8 @@ import ProcessSteps from "@/components/sections/ProcessSteps";
 import Features from "@/components/sections/Features";
 import BusinessPortal from "@/components/sections/BusinessModel";
 import DownloadApp from "@/components/sections/DownloadApp";
+import FAQ from "@/components/sections/FAQ";
+import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
