@@ -50,7 +50,7 @@ const AppShowcase = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-black text-[#03045E] mb-8 tracking-tighter uppercase leading-[0.95]"
+            className="text-4xl md:text-5xl font-black text-[#03045E] mb-8 tracking-tighter uppercase leading-[0.95]"
           >
             The Future of <br className="hidden md:block" /> 
             <span className="text-[#00B4D8]">Water Orchestration</span>
@@ -60,7 +60,7 @@ const AppShowcase = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed"
+            className="text-lg text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed"
           >
             Experience a seamless, digitally-driven flow that connects customers and drivers in one powerful platform.
           </motion.p>

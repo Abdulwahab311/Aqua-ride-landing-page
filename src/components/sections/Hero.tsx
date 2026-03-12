@@ -147,7 +147,7 @@ const Hero = () => {
             </span>
           </motion.div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-8xl xl:text-9xl font-black tracking-[-0.04em] leading-[1.1] sm:leading-[0.9] mb-8 uppercase flex flex-col text-white">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-[-0.04em] leading-[1.1] sm:leading-[0.9] mb-8 uppercase flex flex-col text-white">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

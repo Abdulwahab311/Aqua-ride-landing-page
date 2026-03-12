@@ -34,7 +34,7 @@ const AboutUs = () => {
   };
 
   return (
-    <section id="about-us" className="py-24 px-6 relative overflow-hidden bg-white">
+    <section id="about" className="py-24 px-6 relative overflow-hidden bg-white">
       <div className="max-w-[1750px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
           <motion.div
@@ -48,25 +48,25 @@ const AboutUs = () => {
               Our Mission
             </motion.div>
             
-            <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-black tracking-tighter mb-8 uppercase text-[#03045E] leading-[1.1]">
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black tracking-tighter mb-8 uppercase text-[#03045E] leading-[1.1]">
               MODERNIZING <br className="hidden md:block" />
               <span className="text-[#00B4D8]">WATER DELIVERY</span> <br className="hidden md:block" />
               FOR EVERYONE
             </motion.h2>
 
-            <motion.p variants={itemVariants} className="text-base md:text-lg text-foreground/50 font-medium mb-10 leading-relaxed max-w-xl">
+            <motion.p variants={itemVariants} className="text-lg text-slate-500 font-medium mb-10 leading-relaxed max-w-xl">
               AquaRide is a digital-first platform designed to streamline water tanker services. We connect households and businesses with professional drivers in real-time.
             </motion.p>
             
             <motion.div variants={itemVariants} className="relative p-7 rounded-[35px] bg-slate-50/50 border border-slate-100 mb-12 overflow-hidden group">
               <div className="absolute top-0 left-0 w-1.5 h-full bg-[#00B4D8] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top" />
-              <p className="text-base md:text-lg text-foreground/70 font-bold leading-relaxed italic relative z-10">
+              <p className="text-base md:text-lg text-slate-600 font-bold leading-relaxed italic relative z-10">
                 "Our goal is to make water delivery as simple, fast, and reliable as ordering a ride through your favorite app."
               </p>
             </motion.div>
             
-            <div className="space-y-8">
-              <motion.h4 variants={itemVariants} className="text-xl font-black text-[#03045E] uppercase tracking-tight flex items-center gap-4">
+            <div className="space-y-6">
+              <motion.h4 variants={itemVariants} className="text-lg font-black text-[#03045E] uppercase tracking-tight flex items-center gap-4">
                 <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
                     <HelpCircle size={20} />
                 </div>
@@ -83,7 +83,7 @@ const AboutUs = () => {
                     <div className="w-6 h-6 rounded-full bg-[#00B4D8]/10 flex items-center justify-center shrink-0 mt-0.5">
                         <CheckCircle2 className="text-[#00B4D8] w-4 h-4" />
                     </div>
-                    <span className="text-[13px] font-bold text-foreground/60 leading-snug">{problem}</span>
+                    <span className="text-[13px] font-bold text-slate-500 leading-snug">{problem}</span>
                   </motion.div>
                 ))}
               </motion.div>
@@ -98,7 +98,6 @@ const AboutUs = () => {
             className="relative"
           >
             <div className="aspect-square rounded-[50px] md:rounded-[70px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,118,254,0.2)] relative group">
-                {/* Main Tanker Image */}
                 <div className="absolute inset-0 bg-slate-900">
                     <img 
                         src="/assets/tanker_showcase.png" 
@@ -107,7 +106,6 @@ const AboutUs = () => {
                     />
                 </div>
                 
-                {/* Dynamic Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#03045E]/80 via-transparent to-transparent opacity-60" />
                 
                 <div className="absolute bottom-0 left-0 w-full p-12 translate-y-6 group-hover:translate-y-0 transition-transform duration-700">
@@ -118,13 +116,12 @@ const AboutUs = () => {
                             transition={{ duration: 0.8, delay: 0.5 }}
                             className="h-1 bg-[#00B4D8] mb-6"
                         />
-                        <h3 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tighter uppercase">DRIVING THE FUTURE</h3>
+                        <h3 className="text-3xl font-black text-white mb-4 tracking-tighter uppercase">DRIVING THE FUTURE</h3>
                         <p className="text-white/70 font-medium text-lg leading-relaxed">Empowering both customers and partners with a transparent, technology-driven marketplace.</p>
                     </div>
                 </div>
             </div>
             
-            {/* Abstract Decorative Shapes */}
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-primary/10 blur-[100px] rounded-full animate-pulse" />
             <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#00B4D8]/10 blur-[120px] rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
           </motion.div>

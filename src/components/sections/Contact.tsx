@@ -24,11 +24,11 @@ const Contact = () => {
               <MessageSquare className="w-3.5 h-3.5" />
               Get in Touch
             </div>
-            <h2 className="text-6xl md:text-8xl font-black text-[#03045E] tracking-tighter uppercase leading-[0.9] mb-10">
+            <h2 className="text-5xl md:text-6xl font-black text-[#03045E] tracking-tighter uppercase leading-[0.9] mb-10">
               Let's Start a <br />
               <span className="text-[#00B4D8]">Conversation</span>
             </h2>
-            <p className="text-xl text-slate-500 font-medium leading-relaxed mb-12 max-w-lg">
+            <p className="text-lg text-slate-500 font-medium leading-relaxed mb-12 max-w-lg">
               Have questions about our water delivery ecosystem? Our team is here to help you flow smoothly.
             </p>
 

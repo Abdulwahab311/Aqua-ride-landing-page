@@ -23,7 +23,7 @@ const faqs = [
   }
 ];
 
-const FAQItem = ({ question, answer, isOpen, onClick }) => {
+const FAQItem = ({ question, answer, isOpen, onClick }: { question: string, answer: string, isOpen: boolean, onClick: () => void }) => {
   return (
     <div className="border-b border-slate-100 last:border-0">
       <button
@@ -71,7 +71,7 @@ const FAQ = () => {
             <HelpCircle className="w-3.5 h-3.5" />
             Common Questions
           </motion.div>
-          <h2 className="text-5xl md:text-7xl font-black text-[#03045E] tracking-tighter uppercase leading-[0.9]">
+          <h2 className="text-4xl md:text-5xl font-black text-[#03045E] tracking-tighter uppercase leading-[0.9]">
             Everything you <br />
             <span className="text-[#00B4D8]">Need to Know</span>
           </h2>

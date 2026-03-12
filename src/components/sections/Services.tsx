@@ -36,14 +36,23 @@ const Services = () => {
     <section id="services" className="py-32 px-6 bg-white relative">
       <div className="max-w-[1750px] mx-auto">
         <div className="flex flex-col lg:flex-row items-end justify-between gap-10 mb-24">
-          <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-7xl font-black tracking-tighter mb-8 uppercase text-[#03045E] leading-[1.1]">
-              COMPLETE <span className="text-[#00B4D8]">SERVICE</span> SUITE
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            <motion.div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-primary text-[10px] font-black tracking-[0.3em] uppercase mb-8">
+              <Zap className="w-3.5 h-3.5" />
+              Our Services
+            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-black text-[#03045E] mb-8 tracking-tighter uppercase leading-[0.9]">
+              The Lifecycle of <br />
+              <span className="text-[#00B4D8]">Every Drop</span>
             </h2>
-            <p className="text-[#00B4D8] font-bold tracking-[0.2em] uppercase text-xs italic">
-              "Effortless water management at your fingertips."
+            <p className="text-lg text-slate-500 font-medium leading-relaxed max-w-xl">
+              From scheduling to real-time tracking, our ecosystem is designed for maximum efficiency and total transparency.
             </p>
-          </div>
+          </motion.div>
           <div className="flex gap-4">
             <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-[#03045E]">
                 <Search size={20} />

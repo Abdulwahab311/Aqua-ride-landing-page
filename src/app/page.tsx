@@ -67,17 +67,31 @@ export default function Home() {
           >
             <Navbar />
             <main>
-              <Hero />
+              <section id="home">
+                <Hero />
+              </section>
               <AppShowcase />
-              <AboutUs />
-              <Services />
+              <section id="about">
+                <AboutUs />
+              </section>
+              <section id="services">
+                <Services />
+              </section>
               <ProblemSolution />
-              <ProcessSteps />
-              <Features />
+              <section id="process">
+                <ProcessSteps />
+              </section>
+              <section id="features">
+                <Features />
+              </section>
               <BusinessPortal />
               <DownloadApp />
-              <FAQ />
-              <Contact />
+              <section id="faq">
+                <FAQ />
+              </section>
+              <section id="contact">
+                <Contact />
+              </section>
 
               {/* Call to Action Section */}
               <section className="py-32 px-6">
@@ -88,7 +102,7 @@ export default function Home() {
                   >
                     <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/20 blur-[100px] rounded-full -mr-40 -mt-20" />
                     <div className="relative z-10">
-                      <h2 className="text-3xl md:text-7xl font-black tracking-tighter text-white mb-8 uppercase leading-[1.1]">READY TO STREAMLINE <br className="hidden md:block" /> YOUR WATER SUPPLY?</h2>
+                      <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-8 uppercase leading-[1.1]">READY TO STREAMLINE <br className="hidden md:block" /> YOUR WATER SUPPLY?</h2>
                       <p className="text-white/80 max-w-xl mx-auto font-medium text-lg mb-12">
                         Join thousands of households and businesses already using AquaRide for fast, reliable, and transparent water delivery.
                       </p>
