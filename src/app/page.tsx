@@ -76,6 +76,8 @@ export default function Home() {
               <Features />
               <BusinessPortal />
               <DownloadApp />
+              <FAQ />
+              <Contact />
 
               {/* Call to Action Section */}
               <section className="py-32 px-6">
