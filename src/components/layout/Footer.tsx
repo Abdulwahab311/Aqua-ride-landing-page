@@ -7,7 +7,7 @@ import BrandLogo from "../ui/BrandLogo";
 const Footer = () => {
   return (
     <footer className="py-24 px-6 relative overflow-hidden bg-white border-t border-slate-100">
-      <div className="max-w-[1750px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-20">
+      <div className="max-w-[1750px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-20">
         {/* Brand Column */}
         <div className="flex flex-col">
           <div className="flex items-center gap-3 mb-6">
@@ -34,9 +34,25 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-slate-400" />
               </div>
               <span className="font-medium leading-relaxed pt-2">
-                Launching in Accra, Ghana — 2026
+                Accra, Ghana
               </span>
             </div>
+          </div>
+        </div>
+
+        {/* News Column */}
+        <div className="flex flex-col">
+          <h4 className="font-black uppercase tracking-widest text-xs mb-8 text-[#00B4D8]">Latest News</h4>
+          <p className="text-slate-500 font-medium text-xs mb-6 uppercase tracking-wider">Stay updated with our progress.</p>
+          <div className="relative group">
+            <input 
+              type="email" 
+              placeholder="Your email address" 
+              className="w-full bg-slate-50 border border-slate-100 rounded-2xl py-4 pl-6 pr-14 text-sm font-medium focus:outline-none focus:border-[#00B4D8] focus:ring-4 focus:ring-[#00B4D8]/5 transition-all outline-none"
+            />
+            <button className="absolute right-2 top-2 bottom-2 aspect-square bg-[#00B4D8] text-white rounded-xl flex items-center justify-center hover:bg-[#03045E] transition-colors shadow-lg shadow-[#00B4D8]/20">
+              <Mail className="w-4 h-4" />
+            </button>
           </div>
         </div>
 
@@ -74,6 +90,7 @@ const Footer = () => {
         <span>© 2026 Aqua Ride. All Rights Reserved.</span>
         <div className="flex gap-10">
           <a href="#" className="hover:text-[#00B4D8] transition-colors">Privacy Policy</a>
+          <a href="#" className="hover:text-[#00B4D8] transition-colors">Terms of Service</a>
           <a href="#" className="hover:text-[#00B4D8] transition-colors">For Investors</a>
         </div>
       </div>
