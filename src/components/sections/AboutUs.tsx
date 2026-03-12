@@ -13,66 +13,120 @@ const AboutUs = () => {
     "Drivers waste time looking for customers manually."
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.7, ease: "easeOut" } 
+    }
+  };
+
   return (
-    <section id="about-us" className="py-32 px-6 relative overflow-hidden bg-slate-50">
+    <section id="about-us" className="py-24 px-6 relative overflow-hidden bg-white">
       <div className="max-w-[1750px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-black tracking-widest uppercase mb-6">
-              <Target className="w-4 h-4" />
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-primary text-[10px] font-black tracking-[0.3em] uppercase mb-8">
+              <Target className="w-3.5 h-3.5" />
               Our Mission
-            </div>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 uppercase text-[#03045E] leading-[1.1]">
-              MODERNIZING <span className="text-[#00B4D8]">WATER DELIVERY</span> FOR EVERYONE
-            </h2>
-            <p className="text-lg text-foreground/70 font-medium mb-8 leading-relaxed">
-              AquaRide is a modern on-demand water tanker delivery platform. We are designed to streamline and digitize water tanker services by connecting customers who need water with professional tanker drivers in real-time.
-            </p>
-            <p className="text-lg text-foreground/70 font-medium mb-12 leading-relaxed italic border-l-4 border-[#00B4D8] pl-6">
-              "Our goal is to make water delivery as simple, fast, and reliable as ordering a ride through your favorite ride-hailing app."
-            </p>
+            </motion.div>
             
-            <div className="space-y-4">
-              <h4 className="text-xl font-black text-[#03045E] uppercase tracking-tight mb-6 flex items-center gap-3">
-                <HelpCircle className="text-[#00B4D8]" />
+            <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-black tracking-tighter mb-8 uppercase text-[#03045E] leading-[1.1]">
+              MODERNIZING <br className="hidden md:block" />
+              <span className="text-[#00B4D8]">WATER DELIVERY</span> <br className="hidden md:block" />
+              FOR EVERYONE
+            </motion.h2>
+
+            <motion.p variants={itemVariants} className="text-base md:text-lg text-foreground/50 font-medium mb-10 leading-relaxed max-w-xl">
+              AquaRide is a digital-first platform designed to streamline water tanker services. We connect households and businesses with professional drivers in real-time.
+            </motion.p>
+            
+            <motion.div variants={itemVariants} className="relative p-7 rounded-[35px] bg-slate-50/50 border border-slate-100 mb-12 overflow-hidden group">
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#00B4D8] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top" />
+              <p className="text-base md:text-lg text-foreground/70 font-bold leading-relaxed italic relative z-10">
+                "Our goal is to make water delivery as simple, fast, and reliable as ordering a ride through your favorite app."
+              </p>
+            </motion.div>
+            
+            <div className="space-y-8">
+              <motion.h4 variants={itemVariants} className="text-xl font-black text-[#03045E] uppercase tracking-tight flex items-center gap-4">
+                <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                    <HelpCircle size={20} />
+                </div>
                 Problems We Solve
-              </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              </motion.h4>
+              
+              <motion.div variants={containerVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {problems.map((problem, i) => (
-                  <div key={i} className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm border border-slate-100">
-                    <CheckCircle2 className="text-[#00B4D8] w-5 h-5 mt-1 shrink-0" />
-                    <span className="text-sm font-bold text-foreground/60">{problem}</span>
-                  </div>
+                  <motion.div 
+                    variants={itemVariants}
+                    key={i} 
+                    className="flex items-start gap-4 p-5 bg-white rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] border border-slate-50 hover:border-primary/20 hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-[#00B4D8]/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <CheckCircle2 className="text-[#00B4D8] w-4 h-4" />
+                    </div>
+                    <span className="text-[13px] font-bold text-foreground/60 leading-snug">{problem}</span>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-square rounded-[60px] bg-gradient-to-br from-[#0076FE] to-[#00B4D8] overflow-hidden shadow-2xl relative group">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-overlay opacity-30 group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute inset-0 flex items-center justify-center p-12">
-                    <div className="glass-premium p-10 rounded-[40px] text-center border-white/30">
-                        <h3 className="text-3xl font-black text-white mb-4">DRIVING THE FUTURE</h3>
-                        <p className="text-white/80 font-medium">Empowering both customers and partners with a transparent, technology-driven marketplace.</p>
+            <div className="aspect-square rounded-[50px] md:rounded-[70px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,118,254,0.2)] relative group">
+                {/* Main Tanker Image */}
+                <div className="absolute inset-0 bg-slate-900">
+                    <img 
+                        src="/assets/tanker_showcase.png" 
+                        alt="AquaRide Tanker" 
+                        className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-[2s] ease-out"
+                    />
+                </div>
+                
+                {/* Dynamic Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#03045E]/80 via-transparent to-transparent opacity-60" />
+                
+                <div className="absolute bottom-0 left-0 w-full p-12 translate-y-6 group-hover:translate-y-0 transition-transform duration-700">
+                    <div className="glass-premium p-10 rounded-[45px] border-white/20 backdrop-blur-2xl">
+                        <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: "60px" }}
+                            transition={{ duration: 0.8, delay: 0.5 }}
+                            className="h-1 bg-[#00B4D8] mb-6"
+                        />
+                        <h3 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tighter uppercase">DRIVING THE FUTURE</h3>
+                        <p className="text-white/70 font-medium text-lg leading-relaxed">Empowering both customers and partners with a transparent, technology-driven marketplace.</p>
                     </div>
                 </div>
             </div>
             
-            {/* Decorative elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#00B4D8]/20 blur-3xl rounded-full" />
-            <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-[#03045E]/10 blur-3xl rounded-full" />
+            {/* Abstract Decorative Shapes */}
+            <div className="absolute -top-16 -right-16 w-64 h-64 bg-primary/10 blur-[100px] rounded-full animate-pulse" />
+            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#00B4D8]/10 blur-[120px] rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
           </motion.div>
         </div>
       </div>

@@ -65,9 +65,7 @@ const ProblemSolution = () => {
                   </div>
                 ))}
               </div>
-              <button className="mt-10 px-8 py-4 bg-primary text-white rounded-2xl font-black flex items-center gap-3 shadow-lg shadow-primary/20 cursor-pointer">
-                GET STARTED <ArrowRight />
-              </button>
+              
             </div>
           </motion.div>
         </div>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Droplets } from "lucide-react";
 import Script from "next/script";
 
 // Layout components
@@ -12,6 +12,7 @@ import LoadingScreen from "@/components/layout/LoadingScreen";
 
 // Section components
 import Hero from "@/components/sections/Hero";
+import AppShowcase from "@/components/sections/AppShowcase";
 import AboutUs from "@/components/sections/AboutUs";
 import Services from "@/components/sections/Services";
 import ProblemSolution from "@/components/sections/ProblemSolution";
@@ -65,6 +66,7 @@ export default function Home() {
             <Navbar />
             <main>
               <Hero />
+              <AppShowcase />
               <AboutUs />
               <Services />
               <ProblemSolution />
@@ -136,15 +138,28 @@ export default function Home() {
                                 </div>
                               </div>
                             </div>
-                            <div className="space-y-2">
-                              <div className="h-1.5 w-full bg-white/20 rounded-full overflow-hidden">
-                                <motion.div 
-                                  animate={{ x: ["-100%", "100%"] }} 
-                                  transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                                  className="h-full w-1/2 bg-[#00B4D8]" 
-                                />
+                            
+                            <div className="mt-4 relative h-24 bg-white/10 rounded-2xl overflow-hidden border border-white/10 group/card shadow-[inset_0_2px_10px_rgba(0,0,0,0.1)]">
+                              <motion.div 
+                                initial={{ height: "15%" }}
+                                animate={{ height: ["15%", "80%", "15%"] }}
+                                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[#00B4D8] to-cyan-300 opacity-40"
+                              />
+                              
+                              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+                                <motion.div
+                                  animate={{ y: [0, -4, 0] }}
+                                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                >
+                                  <Droplets className="text-white/60 drop-shadow-md" size={24} />
+                                </motion.div>
+                                <div className="text-[10px] font-black tracking-[0.25em] text-white uppercase text-center drop-shadow-md">Smart Refill <br /> Syncing</div>
+                                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md shadow-lg">
+                                  <div className="w-1.5 h-1.5 rounded-full bg-[#00B4D8] animate-pulse" />
+                                  <span className="text-[9px] font-black text-white/80 uppercase">Purity 99.9%</span>
+                                </div>
                               </div>
-                              <div className="text-[10px] font-bold text-white/40 uppercase tracking-widest text-center">Optimizing Route...</div>
                             </div>
                           </div>
                           

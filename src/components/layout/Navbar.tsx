@@ -36,9 +36,13 @@ const Navbar = () => {
           </motion.span>
         </div>
 
-        <div className="hidden lg:flex items-center gap-10 text-[13px] font-bold uppercase tracking-widest text-foreground/50">
+        <div className={`hidden lg:flex items-center gap-10 text-[13px] font-bold uppercase tracking-widest transition-colors duration-500 ${isScrolled ? "text-foreground/50" : "text-white"}`}>
           {["About Us", "Services", "How it Works", "Features", "Business Portal"].map((item) => (
-            <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, "-")}`} className="hover:text-primary transition-colors duration-300 cursor-pointer">
+            <a 
+              key={item} 
+              href={`#${item.toLowerCase().replace(/\s+/g, "-")}`} 
+              className={`hover:text-[#00B4D8] transition-all duration-300 cursor-pointer ${!isScrolled ? "drop-shadow-[0_2px_4px_rgba(0,0,0,1)] hover:scale-105" : ""}`}
+            >
               {item}
             </a>
           ))}
@@ -46,10 +50,10 @@ const Navbar = () => {
 
         <div className="flex items-center gap-4">
           <button 
-            className="lg:hidden text-foreground cursor-pointer"
+            className={`lg:hidden cursor-pointer transition-colors duration-500 ${isScrolled ? "text-foreground" : "text-white"}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X /> : <Menu />}
+            {mobileMenuOpen ? <X /> : <Menu className={!isScrolled ? "drop-shadow-[0_2px_4px_rgba(0,0,0,1)]" : ""} />}
           </button>
         </div>
       </div>
