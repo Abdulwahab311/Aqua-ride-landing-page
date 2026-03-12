@@ -40,11 +40,11 @@ const BusinessPortal = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-8 leading-[0.9] text-[#03045E]">
+              <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-8 leading-[0.9] text-[#03045E]">
                 Orchestrating <br />
                 <span className="text-[#00B4D8] tracking-[-0.05em]">Essential Utilities</span>
               </h2>
-              <p className="text-xl text-[#03045E]/60 max-w-xl leading-relaxed mb-12 font-medium">
+              <p className="text-lg text-[#03045E]/60 max-w-xl leading-relaxed mb-12 font-medium">
                 AquaRide operates as a digital intermediary, transforming fragmented water delivery into a structured, high-efficiency marketplace.
               </p>
               

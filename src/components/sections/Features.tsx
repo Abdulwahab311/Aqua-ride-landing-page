@@ -26,7 +26,7 @@ const Features = () => {
       <div className="max-w-[1750px] mx-auto">
         <div className="flex flex-col lg:flex-row items-end justify-between gap-10 mb-20">
           <div className="max-w-xl">
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 uppercase text-[#03045E]">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 uppercase text-[#03045E]">
               DUAL <span className="text-[#00B4D8]">ECOSYSTEM</span>
             </h2>
             <p className="text-[#00B4D8] font-bold tracking-[0.2em] uppercase text-xs">Dedicated experiences tailored for both customers and tanker partners.</p>

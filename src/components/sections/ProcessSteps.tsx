@@ -33,10 +33,10 @@ const ProcessSteps = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 px-6 relative overflow-hidden">
+    <section className="py-24 px-6 relative overflow-hidden">
       <div className="max-w-[1750px] mx-auto">
         <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase mb-6 text-[#03045E]">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6 text-[#03045E]">
             A SMART <span className="text-[#00B4D8]">ECOSYSTEM</span>
           </h2>
           <p className="text-[#00B4D8] font-bold tracking-[0.2em] uppercase text-xs italic">"Water delivery redefined by Aqua Ride."</p>

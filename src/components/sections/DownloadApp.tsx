@@ -27,11 +27,11 @@ const DownloadApp = () => {
               Available on iOS & Android
             </motion.div>
             
-            <h2 className="text-4xl md:text-7xl font-black tracking-tighter mb-8 uppercase text-[#03045E] leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 uppercase text-[#03045E] leading-[1.1]">
               WATER DELIVERY <br /> <span className="text-[#00B4D8]">IN YOUR POCKET</span>
             </h2>
             
-            <p className="text-xl text-foreground/50 font-medium leading-relaxed mb-12">
+            <p className="text-lg text-foreground/50 font-medium leading-relaxed mb-12">
               Join the ecosystem that's redefining how cities access water. Experience seamless ordering, real-time tracking, and transparent pricing on the AquaRide mobile app.
             </p>
 
