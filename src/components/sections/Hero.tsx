@@ -197,12 +197,30 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-xl text-white/70 max-w-2xl leading-relaxed mb-12 font-medium tracking-tight mx-auto"
+            className="text-xl text-white/70 max-w-2xl leading-relaxed mb-16 font-medium tracking-tight mx-auto"
           >
             AquaRide modernizes the water tanker ecosystem. We digitize water delivery by connecting customers with reliable tanker partners in real-time.
           </motion.p>
 
-          <div className="flex items-center justify-center gap-8 sm:gap-16 mb-20">
+          {/* Mouse Scroller */}
+          <motion.button
+            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+            className="group flex flex-col items-center gap-4 cursor-pointer mb-16"
+          >
+            <span className="text-[10px] font-black text-white/40 uppercase tracking-[0.4em] group-hover:text-[#00B4D8] transition-colors">Scroll</span>
+            <div className="w-6 h-10 border-2 border-white/20 rounded-full p-1.5 flex justify-center group-hover:border-[#00B4D8] transition-colors">
+              <motion.div 
+                animate={{ y: [0, 12, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                className="w-1 h-2 bg-white/40 rounded-full group-hover:bg-[#00B4D8] transition-colors"
+              />
+            </div>
+          </motion.button>
+
+          <div className="flex items-center justify-center gap-8 sm:gap-16">
             <div className="flex flex-col items-center">
               <span className="text-3xl sm:text-4xl font-black text-white">500+</span>
               <span className="text-[10px] font-bold uppercase tracking-widest text-[#00B4D8]">Partners</span>
