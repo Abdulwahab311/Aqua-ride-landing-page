@@ -75,7 +75,7 @@ const Hero = () => {
           <source src="/assets/water.MP4" type="video/mp4" />
         </video>
         {/* Subtle Overlay only if needed for text readability, but leaning towards clear video as requested */}
-        <div className="absolute inset-0 bg-black/20 z-10" />
+        <div className="absolute inset-0 bg-black/40 z-10" />
       </div>
 
       {/* Branded Aqua Drops (Parallax) */}
@@ -147,7 +147,7 @@ const Hero = () => {
             </span>
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-[-0.04em] leading-[1.1] sm:leading-[0.9] mb-8 uppercase flex flex-col text-white">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-[-0.04em] leading-[1.1] sm:leading-[0.9] mb-8 uppercase flex flex-col text-white drop-shadow-2xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -197,7 +197,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-xl text-white/70 max-w-2xl leading-relaxed mb-16 font-medium tracking-tight mx-auto"
+            className="text-xl text-white/70 max-w-2xl leading-relaxed mb-16 font-medium tracking-tight mx-auto drop-shadow-lg"
           >
             AquaRide modernizes the water tanker ecosystem. We digitize water delivery by connecting customers with reliable tanker partners in real-time.
           </motion.p>

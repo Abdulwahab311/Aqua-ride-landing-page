@@ -88,7 +88,7 @@ const Contact = () => {
                     className="w-full bg-slate-50/50 border border-slate-100 rounded-2xl py-4 px-6 text-sm font-medium focus:outline-none focus:border-[#00B4D8] focus:ring-4 focus:ring-[#00B4D8]/5 transition-all outline-none resize-none"
                   />
                 </div>
-                <button className="w-full py-5 bg-[#03045E] text-white rounded-2xl font-black flex items-center justify-center gap-3 hover:bg-[#00B4D8] transition-all duration-500 shadow-xl shadow-[#03045E]/20 group">
+                <button className="w-full py-5 bg-[#00B4D8] text-white rounded-2xl font-black flex items-center justify-center gap-3  transition-all duration-500 shadow-xl shadow-[#00B4D8]/20 group">
                   SEND MESSAGE
                   <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>

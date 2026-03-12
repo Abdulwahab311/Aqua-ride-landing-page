@@ -41,7 +41,7 @@ const DownloadApp = () => {
                 href="#"
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative flex items-center gap-4 px-10 py-6 bg-[#03045E] text-white rounded-[30px] shadow-2xl hover:shadow-[#03045E]/40 transition-all duration-300 w-full sm:w-auto"
+                className="group relative flex items-center gap-4 px-10 py-6 bg-[#00B4D8] text-white rounded-[30px] shadow-2xl hover:shadow-[#03045E]/40 transition-all duration-300 w-full sm:w-auto"
               >
                 <Apple size={36} className="text-white group-hover:scale-110 transition-transform" />
                 <div className="text-left">
