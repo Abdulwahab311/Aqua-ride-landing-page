@@ -12,8 +12,8 @@ const Footer = () => {
         {/* Brand Column */}
         <div className="flex flex-col">
           <div className="flex items-center gap-3 mb-6">
-            <BrandLogo size={36} />
-            <span className="text-2xl font-bold tracking-tight text-[#03045E]">Aqua Ride</span>
+            <BrandLogo size={32} />
+            <span className="text-xl font-bold tracking-tight text-[#00B4D8]">AquaRide</span>
           </div>
           <p className="text-slate-500 max-w-xs font-medium leading-relaxed">
             Making water delivery work for everyone.
@@ -88,7 +88,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="max-w-[1750px] mx-auto mt-20 pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]">
-        <span>© 2026 Aqua Ride. All Rights Reserved.</span>
+        <span>© 2026 AquaRide. All Rights Reserved.</span>
         <div className="flex gap-10">
           <Link href="/privacy-policy" className="hover:text-[#00B4D8] transition-colors">Privacy Policy</Link>
           <Link href="/terms-and-conditions" className="hover:text-[#00B4D8] transition-colors">Terms of Service</Link>

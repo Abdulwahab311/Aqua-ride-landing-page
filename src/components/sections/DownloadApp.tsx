@@ -36,7 +36,7 @@ const DownloadApp = () => {
             </p>
 
             {/* Store Buttons Container */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
               <motion.a 
                 href="#"
                 whileHover={{ scale: 1.05, y: -5 }}
@@ -65,6 +65,21 @@ const DownloadApp = () => {
                 </div>
               </motion.a>
             </div>
+
+            {/* App Download Visual - More relevant to the "download" context */}
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="relative max-w-[500px] mx-auto"
+            >
+              <img 
+                src="/assets/app_download_visual.png" 
+                alt="AquaRide app download progress illustration" 
+                className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,180,216,0.2)] hover:scale-105 transition-transform duration-700"
+              />
+            </motion.div>
           </div>
 
           {/* Feature Highlights beneath buttons */}
@@ -86,7 +101,7 @@ const DownloadApp = () => {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary mb-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-4">
                 <Droplets size={24} />
               </div>
               <h4 className="text-sm font-black text-[#03045E] uppercase tracking-wider mb-2">Smart Refills</h4>

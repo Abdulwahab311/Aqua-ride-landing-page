@@ -39,7 +39,7 @@ const ProcessSteps = () => {
           <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6 text-[#03045E]">
             A SMART <span className="text-[#00B4D8]">ECOSYSTEM</span>
           </h2>
-          <p className="text-[#00B4D8] font-bold tracking-[0.2em] uppercase text-xs italic">"Water delivery redefined by Aqua Ride."</p>
+          <p className="text-[#00B4D8] font-bold tracking-[0.2em] uppercase text-xs italic">"Water delivery redefined by AquaRide."</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

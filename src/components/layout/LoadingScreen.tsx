@@ -115,7 +115,7 @@ const LoadingScreen = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-4xl md:text-7xl font-bold text-white mb-4 tracking-tight"
         >
-          Aqua Ride Ghana
+          AquaRide Ghana
         </motion.h1>
 
         {/* Tagline */}

@@ -61,7 +61,7 @@ const Navbar = () => {
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
             className="text-xl font-bold tracking-tight text-[#00B4D8]"
           >
-            Aqua Ride
+            AquaRide
           </motion.span>
         </Link>
 

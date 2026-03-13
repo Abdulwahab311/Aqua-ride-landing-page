@@ -143,7 +143,7 @@ const Hero = () => {
           >
             <div className="w-2.5 h-2.5 bg-[#00B4D8] animate-pulse rounded-full shadow-[0_0_10px_rgba(0,180,216,0.5)]" />
             <span className="text-white font-bold tracking-[0.15em] uppercase text-xs">
-              Aqua Ride Delivery - Water Tanker Orchestration
+              AquaRide Delivery - Water Tanker Orchestration
             </span>
           </motion.div>
 
@@ -151,11 +151,11 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex flex-wrap items-center justify-center gap-x-4 lg:gap-x-6 gap-y-2"
+              className="flex flex-wrap items-center justify-center gap-y-2"
             >
               <span className="text-[#00B4D8]">Aqua</span>
               <span 
-                className="text-transparent relative tracking-tight"
+                className="text-transparent relative tracking-tight -ml-1 sm:-ml-2"
                 style={{ 
                   WebkitTextStroke: '1.5px rgba(255,255,255,0.8)',
                   textShadow: '0 0 30px rgba(0, 180, 216, 0.4)'

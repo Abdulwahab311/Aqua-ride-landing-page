@@ -17,7 +17,7 @@ const BrandLogo: React.FC<BrandLogoProps> = ({ className = "", size = 48, varian
     >
       <Image
         src="/brand/logo.png"
-        alt="Aqua Ride Logo"
+        alt="AquaRide Logo"
         width={size}
         height={size}
         className={`object-contain ${variant === "white" ? "brightness-0 invert" : ""}`}
