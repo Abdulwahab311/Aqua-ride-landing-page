@@ -1,6 +1,8 @@
 // app/terms-of-use/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Terms of Use | AquaRide Ghana",
@@ -11,17 +13,9 @@ export const metadata: Metadata = {
 export default function TermsOfUsePage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Back button */}
-      <div className="max-w-4xl mx-auto px-6 pt-8">
-        <Link
-          href="/"
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6 text-sm transition-colors"
-        >
-          ← Back to Home
-        </Link>
-      </div>
+      <Navbar />
 
-      <div className="max-w-4xl mx-auto px-6 pb-16">
+      <div className="max-w-4xl mx-auto px-6 pt-32 pb-16">
         <style>{`
           [data-custom-class='body'], [data-custom-class='body'] * {
             background: transparent !important;
@@ -548,6 +542,7 @@ export default function TermsOfUsePage() {
 
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

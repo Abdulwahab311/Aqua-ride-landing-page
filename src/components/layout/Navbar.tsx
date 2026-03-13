@@ -45,7 +45,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${(isScrolled || mobileMenuOpen) ? "py-4 bg-white/80 backdrop-blur-xl border-b border-slate-200" : "py-6 bg-transparent"}`}>
+    <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${(isScrolled || mobileMenuOpen || !isHomePage) ? "py-4 bg-white/80 backdrop-blur-xl border-b border-slate-200" : "py-6 bg-transparent"}`}>
       <div className="max-w-[1750px] mx-auto px-6 flex items-center justify-between">
         <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3 cursor-pointer group">
           <motion.div 
@@ -65,7 +65,7 @@ const Navbar = () => {
           </motion.span>
         </Link>
 
-        <div className={`hidden lg:flex items-center gap-8 text-[11px] font-black uppercase tracking-[0.2em] transition-colors duration-500 ${isScrolled ? "text-slate-500" : "text-white"}`}>
+        <div className={`hidden lg:flex items-center gap-8 text-[11px] font-black uppercase tracking-[0.2em] transition-colors duration-500 ${isScrolled || !isHomePage ? "text-slate-500" : "text-white"}`}>
           {navItems.map((item) => (
             <Link
               key={item.id || item.name}
@@ -85,10 +85,10 @@ const Navbar = () => {
 
         <div className="flex items-center gap-4">
           <button 
-            className={`lg:hidden cursor-pointer transition-colors duration-500 ${isScrolled || mobileMenuOpen ? "text-slate-900" : "text-white"}`}
+            className={`lg:hidden cursor-pointer transition-colors duration-500 ${isScrolled || mobileMenuOpen || !isHomePage ? "text-slate-900" : "text-white"}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X /> : <Menu className={!isScrolled ? "drop-shadow-md" : ""} />}
+            {mobileMenuOpen ? <X /> : <Menu className={!isScrolled && isHomePage ? "drop-shadow-md" : ""} />}
           </button>
         </div>
       </div>
