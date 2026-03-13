@@ -29,8 +29,6 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       
-      // Detect active section
-      // Filter out items without an 'id'      // Detect active section
       const sections = navItems.filter(item => item.id).map(item => document.getElementById(item.id!));
       const scrollPos = window.scrollY + 100;
 
@@ -46,18 +44,10 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setMobileMenuOpen(false);
-    }
-  };
-
   return (
     <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${(isScrolled || mobileMenuOpen) ? "py-4 bg-white/80 backdrop-blur-xl border-b border-slate-200" : "py-6 bg-transparent"}`}>
       <div className="max-w-[1750px] mx-auto px-6 flex items-center justify-between">
-        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3 cursor-pointer group">
+        <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3 cursor-pointer group">
           <motion.div 
             initial={{ scale: 0, rotate: -20 }}
             animate={{ scale: 1, rotate: 0 }}
@@ -73,43 +63,23 @@ const Navbar = () => {
           >
             Aqua Ride
           </motion.span>
-        </button>
+        </Link>
 
         <div className={`hidden lg:flex items-center gap-8 text-[11px] font-black uppercase tracking-[0.2em] transition-colors duration-500 ${isScrolled ? "text-slate-500" : "text-white"}`}>
           {navItems.map((item) => (
-            item.id ? (
-              isHomePage ? (
-                <button 
-                  key={item.id} 
-                  onClick={() => scrollToSection(item.id!)}
-                  className={`relative py-2 transition-all duration-300 cursor-pointer hover:text-[#00B4D8] ${activeSection === item.id ? "text-[#00B4D8]" : ""} ${!isScrolled ? "drop-shadow-md" : ""}`}
-                >
-                  {item.name}
-                  {activeSection === item.id && (
-                    <motion.div 
-                      layoutId="activeNav"
-                      className="absolute bottom-0 left-0 w-full h-0.5 bg-[#00B4D8] rounded-full"
-                    />
-                  )}
-                </button>
-              ) : (
-                <Link
-                  key={item.id}
-                  href={`/#${item.id}`}
-                  className={`transition-all duration-300 hover:text-[#00B4D8] ${!isScrolled ? "drop-shadow-md" : ""}`}
-                >
-                  {item.name}
-                </Link>
-              )
-            ) : (
-              <Link
-                key={item.name}
-                href={item.href!}
-                className={`transition-all duration-300 hover:text-[#00B4D8] ${!isScrolled ? "drop-shadow-md" : ""}`}
-              >
-                {item.name}
-              </Link>
-            )
+            <Link
+              key={item.id || item.name}
+              href={item.id ? `/#${item.id}` : item.href!}
+              className={`relative py-2 transition-all duration-300 hover:text-[#00B4D8] ${activeSection === item.id ? "text-[#00B4D8]" : ""} ${!isScrolled ? "drop-shadow-md" : ""}`}
+            >
+              {item.name}
+              {activeSection === item.id && (
+                <motion.div 
+                  layoutId="activeNav"
+                  className="absolute bottom-0 left-0 w-full h-0.5 bg-[#00B4D8] rounded-full"
+                />
+              )}
+            </Link>
           ))}
         </div>
 
@@ -133,35 +103,14 @@ const Navbar = () => {
           >
             <div className="p-8 flex flex-col gap-8 text-center font-black uppercase tracking-[0.2em] text-xs">
               {navItems.map((item) => (
-                item.id ? (
-                  isHomePage ? (
-                    <button 
-                      key={item.id} 
-                      onClick={() => scrollToSection(item.id!)}
-                      className={`transition-colors ${activeSection === item.id ? "text-[#00B4D8]" : "text-slate-600"}`}
-                    >
-                      {item.name}
-                    </button>
-                  ) : (
-                    <Link
-                      key={item.id}
-                      href={`/#${item.id}`}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="text-slate-600 hover:text-[#00B4D8] transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  )
-                ) : (
-                  <Link
-                    key={item.name}
-                    href={item.href!}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-slate-600 hover:text-[#00B4D8] transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                )
+                <Link
+                  key={item.id || item.name}
+                  href={item.id ? `/#${item.id}` : item.href!}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`transition-colors ${activeSection === item.id ? "text-[#00B4D8]" : "text-slate-600"}`}
+                >
+                  {item.name}
+                </Link>
               ))}
             </div>
           </motion.div>
