@@ -21,8 +21,8 @@ const Navbar = () => {
     { name: "Features", id: "features" },
     { name: "FAQ", id: "faq" },
     { name: "Contact", id: "contact" },
-    { name: "Privacy", href: "/privacy-policy" },
-    { name: "Terms", href: "/terms-and-conditions" }
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms and Conditions", href: "/terms-and-conditions" }
   ];
 
   useEffect(() => {
