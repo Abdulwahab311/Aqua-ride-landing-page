@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Linkedin, Facebook, Mail, MapPin, Instagram, Youtube } from "lucide-react";
+import Link from "next/link";
 import BrandLogo from "../ui/BrandLogo";
 
 const Footer = () => {
@@ -89,9 +90,8 @@ const Footer = () => {
       <div className="max-w-[1750px] mx-auto mt-20 pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]">
         <span>© 2026 Aqua Ride. All Rights Reserved.</span>
         <div className="flex gap-10">
-          <a href="#" className="hover:text-[#00B4D8] transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-[#00B4D8] transition-colors">Terms of Service</a>
-          <a href="#" className="hover:text-[#00B4D8] transition-colors">For Investors</a>
+          <Link href="/privacy-policy" className="hover:text-[#00B4D8] transition-colors">Privacy Policy</Link>
+          <Link href="/terms-and-conditions" className="hover:text-[#00B4D8] transition-colors">Terms of Service</Link>
         </div>
       </div>
     </footer>
