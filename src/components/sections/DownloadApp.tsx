@@ -6,7 +6,7 @@ import { Apple, PlayCircle, Smartphone, Droplets, ShieldCheck, Zap } from "lucid
 
 const DownloadApp = () => {
   return (
-    <section id="download" className="py-32 px-6 relative overflow-hidden">
+    <section id="download" className="py-16 px-6 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full animate-pulse" />
@@ -36,7 +36,7 @@ const DownloadApp = () => {
             </p>
 
             {/* Store Buttons Container */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
               <motion.a 
                 href="#"
                 whileHover={{ scale: 1.05, y: -5 }}

@@ -2,15 +2,14 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { CheckCircle2, Target, HelpCircle } from "lucide-react";
+import { CheckCircle2, Target, HelpCircle, X } from "lucide-react";
 
 const AboutUs = () => {
   const problems = [
-    "Finding available tanker drivers quickly is a struggle.",
-    "Uncertain and difficult to estimate delivery times.",
-    "Limited transparency in pricing and delivery status.",
-    "Inability to track tanker location in real-time.",
-    "Drivers waste time looking for customers manually."
+    { title: "Zero Availability", desc: "Finding available tanker drivers quickly is a major struggle in traditional systems.", type: "problem" },
+    { title: "Opaque Tracking", desc: "Limited transparency in pricing and inability to track tanker location in real-time.", type: "problem" },
+    { title: "Smart Ecosystem", desc: "A tech-driven marketplace connecting supply and demand through smart matching.", type: "solution" },
+    { title: "Secure Ops", desc: "Built-in transparency ensures every drop is accounted for and delivered safely.", type: "solution" }
   ];
 
   const containerVariants: Variants = {
@@ -74,16 +73,19 @@ const AboutUs = () => {
               </motion.h4>
               
               <motion.div variants={containerVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {problems.map((problem, i) => (
+                {problems.map((item, i) => (
                   <motion.div 
                     variants={itemVariants}
                     key={i} 
-                    className="flex items-start gap-4 p-5 bg-white rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] border border-slate-50 hover:border-primary/20 hover:shadow-xl transition-all duration-300"
+                    className={`flex items-start gap-4 p-5 rounded-3xl border transition-all duration-300 ${item.type === 'solution' ? 'bg-primary/5 border-primary/20 shadow-primary/5 hover:border-primary/40' : 'bg-slate-50 border-slate-100 hover:border-red-500/20'}`}
                   >
-                    <div className="w-6 h-6 rounded-full bg-[#00B4D8]/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="text-[#00B4D8] w-4 h-4" />
+                    <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${item.type === 'solution' ? 'bg-primary/10 text-primary' : 'bg-red-500/10 text-red-500'}`}>
+                        {item.type === 'solution' ? <CheckCircle2 className="w-4 h-4" /> : <X className="w-4 h-4" />}
                     </div>
-                    <span className="text-[13px] font-bold text-slate-500 leading-snug">{problem}</span>
+                    <div>
+                      <span className="text-sm font-black text-slate-700 block mb-1 uppercase tracking-tight">{item.title}</span>
+                      <span className="text-[12px] font-medium text-slate-500 leading-snug">{item.desc}</span>
+                    </div>
                   </motion.div>
                 ))}
               </motion.div>
@@ -108,16 +110,16 @@ const AboutUs = () => {
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#03045E]/80 via-transparent to-transparent opacity-60" />
                 
-                <div className="absolute bottom-0 left-0 w-full p-12 translate-y-6 group-hover:translate-y-0 transition-transform duration-700">
-                    <div className="glass-premium p-10 rounded-[45px] border-white/20 backdrop-blur-2xl">
+                <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 translate-y-4 md:translate-y-6 group-hover:translate-y-0 transition-transform duration-700">
+                    <div className="glass-premium p-6 md:p-10 rounded-[35px] md:rounded-[45px] border-white/20 backdrop-blur-2xl">
                         <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: "60px" }}
                             transition={{ duration: 0.8, delay: 0.5 }}
-                            className="h-1 bg-[#00B4D8] mb-6"
+                            className="h-1 bg-[#00B4D8] mb-4 md:mb-6"
                         />
-                        <h3 className="text-3xl font-black text-white mb-4 tracking-tighter uppercase">DRIVING THE FUTURE</h3>
-                        <p className="text-white/70 font-medium text-lg leading-relaxed">Empowering both customers and partners with a transparent, technology-driven marketplace.</p>
+                        <h3 className="text-xl md:text-3xl font-black text-white mb-2 md:mb-4 tracking-tighter uppercase">DRIVING THE FUTURE</h3>
+                        <p className="text-white/70 font-medium text-sm md:text-lg leading-relaxed">Empowering both customers and partners with a transparent, technology-driven marketplace.</p>
                     </div>
                 </div>
             </div>

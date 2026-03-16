@@ -60,7 +60,7 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="py-32 px-6 bg-white overflow-hidden">
+    <section className="py-12 px-6 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-20">
           <motion.div

@@ -65,7 +65,7 @@ const Navbar = () => {
           </motion.span>
         </Link>
 
-        <div className={`hidden lg:flex items-center gap-8 text-[11px] font-black uppercase tracking-[0.2em] transition-colors duration-500 ${isScrolled || !isHomePage ? "text-slate-500" : "text-white"}`}>
+        <div className={`hidden lg:flex items-center gap-8 text-[13px] font-black uppercase tracking-[0.15em] font-[family-name:var(--font-outfit)] transition-colors duration-500 ${isScrolled || !isHomePage ? "text-slate-500" : "text-white"}`}>
           {navItems.map((item) => (
             <Link
               key={item.id || item.name}
@@ -101,7 +101,7 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-white backdrop-blur-2xl border-b border-slate-200 overflow-hidden"
           >
-            <div className="p-8 flex flex-col gap-8 text-center font-black uppercase tracking-[0.2em] text-xs">
+            <div className="p-8 flex flex-col gap-8 text-center font-black uppercase tracking-[0.15em] text-[13px] font-[family-name:var(--font-outfit)]">
               {navItems.map((item) => (
                 <Link
                   key={item.id || item.name}

@@ -27,7 +27,7 @@ const AppShowcase = () => {
   ];
 
   return (
-    <section className="py-24 px-6 bg-white relative overflow-hidden">
+    <section className="py-12 px-6 bg-white relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full" />
@@ -76,7 +76,7 @@ const AppShowcase = () => {
               className="flex flex-col group"
             >
               {/* Image Card */}
-              <div className="relative mb-12 w-full aspect-[9/18.5] mx-auto">
+              <div className="relative mb-12 w-full max-w-[280px] aspect-[9/18.5] mx-auto">
                 <motion.div 
                   whileHover={{ y: -15, scale: 1.02 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -116,7 +116,7 @@ const AppShowcase = () => {
                   {feature.title}
                 </h3>
                 <p className="text-slate-500 font-medium leading-[1.7] text-lg pl-13">
-                  {feature.description}
+                  {index === 0 ? "Experience total reliability with verified delivery confirmation and driver details for every order, starting at just $2.5." : feature.description}
                 </p>
               </div>
             </motion.div>

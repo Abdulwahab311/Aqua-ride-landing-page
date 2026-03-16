@@ -9,20 +9,20 @@ const Features = () => {
 
   const customerFeatures = [
     { title: "Instant Tanker Ordering", desc: "Request a tanker in seconds by selecting your location and priority.", icon: Zap },
-    { title: "Priority Delivery", desc: "Choose Normal or Urgent (30-min) service based on your needs.", icon: Clock },
+    { title: "Priority Delivery", desc: "Choose Standard or Urgent (30-min) service based on your needs.", icon: Clock },
     { title: "Live GPS Tracking", desc: "Watch your tanker move in real-time with dynamic ETA updates.", icon: MapPin },
     { title: "Consumption Dashboard", desc: "Track total liters delivered and manage your water usage history.", icon: BarChart3 }
   ];
 
   const driverFeatures = [
     { title: "Online/Offline Control", desc: "Full control over working hours. Toggle status to accept orders.", icon: Clock },
-    { title: "Live Order Requests", desc: "Instant feed with pickup location, distance, price, and priority.", icon: Zap },
+    { title: "Live Order Requests", desc: "Instant feed with pickup location, distance, price ($2.5 base fee), and priority.", icon: Zap },
     { title: "Smart Navigation", desc: "Built-in route guidance and automated phase-based management.", icon: Navigation },
     { title: "Earnings Analytics", desc: "Insights into daily performance, weekly goals, and total revenue.", icon: BarChart3 }
   ];
 
   return (
-    <section id="features" className="py-32 px-6 bg-white">
+    <section id="features" className="py-12 px-6 relative overflow-hidden">
       <div className="max-w-[1750px] mx-auto">
         <div className="flex flex-col lg:flex-row items-end justify-between gap-10 mb-20">
           <div className="max-w-xl">

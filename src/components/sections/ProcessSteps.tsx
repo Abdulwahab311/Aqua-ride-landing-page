@@ -8,7 +8,7 @@ const ProcessSteps = () => {
   const steps = [
     { 
       title: "Place Your Order", 
-      desc: "Select location and choose between Normal or 30-min Urgent delivery priority.", 
+      desc: "Select location and choose between Standard or 30-min Urgent delivery priority.", 
       icon: MapPin, 
       color: "from-blue-400 to-primary" 
     },
@@ -28,12 +28,15 @@ const ProcessSteps = () => {
       title: "Delivery Phases", 
       desc: "Monitor lifecycle stages: Accept, En Route, Arrived, and Complete.", 
       icon: Truck, 
-      color: "from-accent to-blue-600" 
+      color: "from-accent to-blue-600",
+      stepLabel: "Then"
     }
   ];
 
+  const stepLabels = ["First", "Second", "Next", "Then"];
+
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
+    <section className="py-12 px-6 relative overflow-hidden">
       <div className="max-w-[1750px] mx-auto">
         <div className="text-center mb-24">
           <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6 text-[#03045E]">
@@ -55,7 +58,7 @@ const ProcessSteps = () => {
               <div className={`w-20 h-20 rounded-3xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-10 shadow-lg group-hover:scale-110 transition-transform`}>
                 <step.icon className="text-white w-10 h-10" />
               </div>
-              <div className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-4">Phase 0{i + 1}</div>
+              <div className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-4">{stepLabels[i]}</div>
               <h3 className="text-2xl font-black mb-4 text-foreground">{step.title}</h3>
               <p className="text-foreground/50 font-medium leading-relaxed">{step.desc}</p>
             </motion.div>

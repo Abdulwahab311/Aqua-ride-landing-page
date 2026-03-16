@@ -72,7 +72,8 @@ const Hero = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/assets/water.MP4" type="video/mp4" />
+          {/* Final Cloudinary Video URL */}
+          <source src="https://res.cloudinary.com/dfooxnvcd/video/upload/v1773470991/water_ecixag.mp4" type="video/mp4" />
         </video>
         {/* Subtle Overlay only if needed for text readability, but leaning towards clear video as requested */}
         <div className="absolute inset-0 bg-black/40 z-10" />

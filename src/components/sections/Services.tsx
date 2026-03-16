@@ -10,7 +10,7 @@ const Services = () => {
       title: "Delivery Options",
       icon: Clock,
       items: [
-        { name: "Normal Delivery", desc: "Reliable water delivery scheduled at your convenience." },
+        { name: "Standard Delivery", desc: "Reliable water delivery scheduled at your convenience." },
         { name: "Urgent Delivery", desc: "Priority service within approximately 30 minutes for critical needs.", highlight: true }
       ]
     },
@@ -33,7 +33,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-32 px-6 bg-white relative">
+    <section className="py-12 px-6 relative overflow-hidden">
       <div className="max-w-[1750px] mx-auto">
         <div className="flex flex-col lg:flex-row items-end justify-between gap-10 mb-24">
           <motion.div

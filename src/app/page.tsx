@@ -77,14 +77,12 @@ export default function Home() {
               <section id="services">
                 <Services />
               </section>
-              <ProblemSolution />
               <section id="process">
                 <ProcessSteps />
               </section>
               <section id="features">
                 <Features />
               </section>
-              <BusinessPortal />
               <DownloadApp />
               <section id="faq">
                 <FAQ />
@@ -94,7 +92,7 @@ export default function Home() {
               </section>
 
               {/* Call to Action Section */}
-              <section className="py-32 px-6">
+              <section className="py-12 px-6 relative overflow-hidden">
                 <div className="max-w-[1750px] mx-auto">
                   <motion.div 
                     whileInView={{ scale: [0.95, 1], opacity: [0, 1] }}
