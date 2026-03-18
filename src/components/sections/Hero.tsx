@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Play, Clock, Truck, MapPin, Droplets } from "lucide-react";
+import Link from "next/link";
 import BrandLogo from "../ui/BrandLogo";
 
 const Hero = () => {
@@ -125,6 +126,23 @@ const Hero = () => {
           >
             AquaRide modernizes the water tanker ecosystem. We digitize water delivery by connecting customers with reliable tanker partners in real-time.
           </motion.p>
+
+          {/* Hero CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="mb-12"
+          >
+            <Link 
+              href="#download"
+              className="group relative inline-flex items-center gap-3 px-10 py-5 bg-[#00B4D8] text-white rounded-full font-black uppercase tracking-[0.2em] text-sm shadow-[0_20px_40px_-10px_rgba(0,180,216,0.5)] hover:bg-[#03045E] hover:scale-105 transition-all duration-500"
+            >
+              Get Started
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 rounded-full bg-white/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            </Link>
+          </motion.div>
 
           {/* Mouse Scroller */}
           <motion.button

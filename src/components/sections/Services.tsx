@@ -108,7 +108,7 @@ const Services = () => {
         >
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/20 blur-[100px] rounded-full -mr-40 -mt-20" />
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
-                <div className="max-w-xl lg:w-1/2">
+                <div className="max-w-xl lg:w-[45%]">
                     <span className="text-white/80 font-black tracking-widest uppercase text-[10px] bg-white/10 px-4 py-1.5 rounded-full border border-white/20">Innovation First</span>
                     <h3 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight mt-6 uppercase leading-[1.1]">Dual Application <br /> Architecture</h3>
                     <p className="text-white/90 mt-6 font-medium text-lg leading-relaxed">
@@ -129,12 +129,12 @@ const Services = () => {
                 </div>
 
                 {/* Impressive Sync Visualization */}
-                <div className="lg:w-1/2 relative flex justify-center lg:justify-end">
+                <div className="lg:w-[55%] relative flex justify-center lg:justify-end">
                     <motion.div 
                         initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
                         whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                         transition={{ duration: 1, ease: "easeOut" }}
-                        className="relative w-full max-w-[450px] aspect-square"
+                        className="relative w-full max-w-[600px] aspect-square"
                     >
                         <div className="absolute inset-0 bg-white/20 blur-3xl rounded-full scale-75 animate-pulse" />
                         <img 

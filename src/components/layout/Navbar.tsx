@@ -15,14 +15,10 @@ const Navbar = () => {
   const isHomePage = pathname === "/";
 
   const navItems = [
+    { name: "Home", id: "home" },
     { name: "About", id: "about" },
-    { name: "Services", id: "services" },
-    { name: "Process", id: "process" },
     { name: "Features", id: "features" },
-    { name: "FAQ", id: "faq" },
-    { name: "Contact", id: "contact" },
-    { name: "Privacy Policy", href: "/privacy-policy" },
-    { name: "Terms and Conditions", href: "/terms-and-conditions" }
+    { name: "FAQs", id: "faq" }
   ];
 
   useEffect(() => {
@@ -46,34 +42,44 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${(isScrolled || mobileMenuOpen || !isHomePage) ? "py-4 bg-white/80 backdrop-blur-xl border-b border-slate-200" : "py-6 bg-transparent"}`}>
-      <div className="max-w-[1750px] mx-auto px-6 flex items-center justify-between">
-        <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3 cursor-pointer group">
-          <motion.div 
-            initial={{ scale: 0, rotate: -20 }}
-            animate={{ scale: 1, rotate: 0 }}
-            className="w-8 h-8 relative flex items-center justify-center transition-transform group-hover:scale-110"
-          >
-            <BrandLogo size={32} />
-          </motion.div>
-          <motion.span 
-            initial={{ opacity: 0, x: -10, filter: "blur(10px)" }}
-            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-            className="text-xl font-bold tracking-tight text-[#00B4D8]"
-          >
-            AquaRide
-          </motion.span>
-        </Link>
+      <div className="max-w-[1750px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-3 items-center">
+        {/* Logo (Left) */}
+        <div className="flex justify-start">
+          <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3 cursor-pointer group">
+            <motion.div 
+              initial={{ scale: 0, rotate: -20 }}
+              animate={{ scale: 1, rotate: 0 }}
+              className="w-8 h-8 relative flex items-center justify-center transition-transform group-hover:scale-110"
+            >
+              <BrandLogo size={32} />
+            </motion.div>
+            <motion.span 
+              initial={{ opacity: 0, x: -10, filter: "blur(10px)" }}
+              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              className="text-xl font-bold tracking-tight text-[#00B4D8]"
+            >
+              AquaRide
+            </motion.span>
+          </Link>
+        </div>
 
-        <div className={`hidden lg:flex items-center gap-8 text-[13px] font-black uppercase tracking-[0.15em] font-[family-name:var(--font-outfit)] transition-colors duration-500 ${isScrolled || !isHomePage ? "text-slate-500" : "text-white"}`}>
+        {/* Nav Items (Center - Desktop Only) */}
+        <div className={`hidden lg:flex items-center justify-center gap-8 text-[13px] font-black uppercase tracking-[0.15em] font-[family-name:var(--font-outfit)] transition-colors duration-500 ${isScrolled || !isHomePage ? "text-slate-500" : "text-white"}`}>
           {navItems.map((item) => (
             <Link
               key={item.id || item.name}
-              href={item.id ? `/#${item.id}` : item.href!}
-              className={`relative py-2 transition-all duration-300 hover:text-[#00B4D8] ${activeSection === item.id ? "text-[#00B4D8]" : ""} ${!isScrolled ? "drop-shadow-md" : ""}`}
+              href={item.id === "home" ? "#" : `/#${item.id}`}
+              onClick={(e) => {
+                if (item.id === "home") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+              className={`relative py-2 transition-all duration-300 hover:text-[#00B4D8] ${activeSection === (item.id === "home" ? "home" : item.id) ? "text-[#00B4D8]" : ""} ${!isScrolled ? "drop-shadow-md" : ""}`}
             >
               {item.name}
-              {activeSection === item.id && (
+              {activeSection === (item.id === "home" ? "home" : item.id) && (
                 <motion.div 
                   layoutId="activeNav"
                   className="absolute bottom-0 left-0 w-full h-0.5 bg-[#00B4D8] rounded-full"
@@ -83,7 +89,15 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
+        {/* Desktop CTA & Mobile Menu Toggle (Right) */}
+        <div className="flex items-center justify-end gap-6">
+          <Link 
+            href="#download"
+            className={`hidden lg:flex items-center gap-2 px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all duration-300 shadow-lg ${isScrolled || !isHomePage ? "bg-primary text-white hover:bg-[#03045E]" : "bg-white text-primary hover:bg-[#00B4D8] hover:text-white"}`}
+          >
+            Get Started
+          </Link>
+
           <button 
             className={`lg:hidden cursor-pointer transition-colors duration-500 ${isScrolled || mobileMenuOpen || !isHomePage ? "text-slate-900" : "text-white"}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -101,17 +115,30 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-white backdrop-blur-2xl border-b border-slate-200 overflow-hidden"
           >
-            <div className="p-8 flex flex-col gap-8 text-center font-black uppercase tracking-[0.15em] text-[13px] font-[family-name:var(--font-outfit)]">
+            <div className="p-8 flex flex-col gap-6 text-center font-black uppercase tracking-[0.15em] text-[13px] font-[family-name:var(--font-outfit)]">
               {navItems.map((item) => (
                 <Link
                   key={item.id || item.name}
-                  href={item.id ? `/#${item.id}` : item.href!}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`transition-colors ${activeSection === item.id ? "text-[#00B4D8]" : "text-slate-600"}`}
+                  href={item.id === "home" ? "#" : `/#${item.id}`}
+                  onClick={(e) => {
+                    setMobileMenuOpen(false);
+                    if (item.id === "home") {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                  }}
+                  className={`transition-colors ${activeSection === (item.id === "home" ? "home" : item.id) ? "text-[#00B4D8]" : "text-slate-600"}`}
                 >
                   {item.name}
                 </Link>
               ))}
+              <Link 
+                href="#download"
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-4 px-8 py-4 bg-primary text-white rounded-full text-center font-black uppercase tracking-widest shadow-xl shadow-primary/20"
+              >
+                Get Started
+              </Link>
             </div>
           </motion.div>
         )}
