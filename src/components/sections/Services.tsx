@@ -33,8 +33,8 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-12 px-6 relative overflow-hidden">
-      <div className="max-w-[1750px] mx-auto">
+    <section className="py-12 relative overflow-hidden">
+      <div className="max-w-[1750px] mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-end justify-between gap-10 mb-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -110,7 +110,7 @@ const Services = () => {
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
                 <div className="max-w-xl lg:w-1/2">
                     <span className="text-white/80 font-black tracking-widest uppercase text-[10px] bg-white/10 px-4 py-1.5 rounded-full border border-white/20">Innovation First</span>
-                    <h3 className="text-3xl md:text-5xl font-black tracking-tight mt-6 uppercase leading-[1.1]">Dual Application <br /> Architecture</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight mt-6 uppercase leading-[1.1]">Dual Application <br /> Architecture</h3>
                     <p className="text-white/90 mt-6 font-medium text-lg leading-relaxed">
                         AquaRide operates through dedicated applications for both Customers and Drivers, synchronized by a shared backend infrastructure for zero-delay operations.
                     </p>

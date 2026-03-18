@@ -36,8 +36,8 @@ const ProcessSteps = () => {
   const stepLabels = ["First", "Second", "Next", "Then"];
 
   return (
-    <section className="py-12 px-6 relative overflow-hidden">
-      <div className="max-w-[1750px] mx-auto">
+    <section className="py-12 relative overflow-hidden">
+      <div className="max-w-[1750px] mx-auto px-6">
         <div className="text-center mb-24">
           <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6 text-[#03045E]">
             A SMART <span className="text-[#00B4D8]">ECOSYSTEM</span>

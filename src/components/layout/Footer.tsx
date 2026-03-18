@@ -7,8 +7,8 @@ import BrandLogo from "../ui/BrandLogo";
 
 const Footer = () => {
   return (
-    <footer className="py-24 px-6 relative overflow-hidden bg-white border-t border-slate-100">
-      <div className="max-w-[1750px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-20">
+    <footer className="py-24 relative overflow-hidden bg-white border-t border-slate-100">
+      <div className="max-w-[1750px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-20">
         {/* Brand Column */}
         <div className="flex flex-col">
           <div className="flex items-center gap-3 mb-6">
@@ -80,7 +80,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="max-w-[1750px] mx-auto mt-20 pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]">
+      <div className="max-w-[1750px] mx-auto px-6 mt-20 pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]">
         <span>© 2026 AquaRide. All Rights Reserved.</span>
         <div className="flex gap-10">
           <Link href="/privacy-policy" className="hover:text-[#00B4D8] transition-colors">Privacy Policy</Link>

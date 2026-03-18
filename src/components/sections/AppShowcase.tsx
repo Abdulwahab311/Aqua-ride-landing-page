@@ -27,14 +27,14 @@ const AppShowcase = () => {
   ];
 
   return (
-    <section className="py-12 px-6 bg-white relative overflow-hidden">
+    <section className="py-12 bg-white relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#00B4D8]/5 blur-[120px] rounded-full" />
       </div>
 
-      <div className="max-w-[1750px] mx-auto">
+      <div className="max-w-[1750px] mx-auto px-6">
         <div className="text-center mb-24">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

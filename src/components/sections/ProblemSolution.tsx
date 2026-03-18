@@ -13,8 +13,8 @@ const ProblemSolution = () => {
   ];
 
   return (
-    <section id="problem" className="py-32 px-6 relative overflow-hidden">
-      <div className="max-w-[1750px] mx-auto">
+    <section id="problem" className="py-32 relative overflow-hidden">
+      <div className="max-w-[1750px] mx-auto px-6">
         <div className="text-center mb-24">
           <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 text-[#03045E] uppercase flex items-center justify-center gap-4">
             WHY <span className="text-[#00B4D8]">AQUADRIDE</span>?

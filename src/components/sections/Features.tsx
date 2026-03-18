@@ -22,11 +22,11 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-12 px-6 relative overflow-hidden">
-      <div className="max-w-[1750px] mx-auto">
+    <section id="features" className="py-12 relative overflow-hidden">
+      <div className="max-w-[1750px] mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-end justify-between gap-10 mb-20">
           <div className="max-w-xl">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 uppercase text-[#03045E]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter mb-6 uppercase text-[#03045E]">
               DUAL <span className="text-[#00B4D8]">ECOSYSTEM</span>
             </h2>
             <p className="text-slate-500 font-bold tracking-[0.2em] uppercase text-xs">Dedicated experiences tailored for both customers and tanker partners.</p>

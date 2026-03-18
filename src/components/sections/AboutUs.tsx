@@ -33,8 +33,8 @@ const AboutUs = () => {
   };
 
   return (
-    <section id="about" className="py-24 px-6 relative overflow-hidden bg-white">
-      <div className="max-w-[1750px] mx-auto">
+    <section id="about" className="py-24 relative overflow-hidden bg-white">
+      <div className="max-w-[1750px] mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
           <motion.div
             variants={containerVariants}

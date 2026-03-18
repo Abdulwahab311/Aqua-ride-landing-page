@@ -6,12 +6,12 @@ import { Send, Phone, Mail, MapPin, MessageSquare, Globe } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-32 px-6 relative overflow-hidden bg-slate-50">
+    <section id="contact" className="py-32 relative overflow-hidden bg-slate-50">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[#00B4D8]/5 blur-[120px] -z-10 rounded-full" />
       <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-primary/5 blur-[100px] -z-10 rounded-full" />
 
-      <div className="max-w-[1750px] mx-auto">
+      <div className="max-w-[1750px] mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           
           {/* Left Column: Content */}
@@ -24,7 +24,7 @@ const Contact = () => {
               <MessageSquare className="w-3.5 h-3.5" />
               Get in Touch
             </div>
-            <h2 className="text-5xl md:text-6xl font-black text-[#03045E] tracking-tighter uppercase leading-[0.9] mb-10">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-[#03045E] tracking-tighter uppercase leading-[0.9] mb-10">
               Let's Start a <br />
               <span className="text-[#00B4D8]">Conversation</span>
             </h2>

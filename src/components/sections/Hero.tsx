@@ -38,7 +38,7 @@ const Hero = () => {
   return (
     <section 
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen pt-44 pb-20 px-6 flex items-center justify-center overflow-hidden bg-slate-950"
+      className="relative min-h-screen pt-44 pb-20 flex items-center justify-center overflow-hidden bg-slate-950"
     >
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
@@ -57,7 +57,7 @@ const Hero = () => {
       </div>
 
 
-      <div className="max-w-[1200px] mx-auto w-full relative z-30 flex flex-col items-center text-center">
+      <div className="max-w-[1200px] mx-auto w-full px-6 relative z-30 flex flex-col items-center text-center">
         {/* Content */}
         <motion.div className="flex flex-col items-center">
           <motion.div 
