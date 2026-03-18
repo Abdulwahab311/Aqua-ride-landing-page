@@ -29,7 +29,7 @@ const Features = () => {
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 uppercase text-[#03045E]">
               DUAL <span className="text-[#00B4D8]">ECOSYSTEM</span>
             </h2>
-            <p className="text-[#00B4D8] font-bold tracking-[0.2em] uppercase text-xs">Dedicated experiences tailored for both customers and tanker partners.</p>
+            <p className="text-slate-500 font-bold tracking-[0.2em] uppercase text-xs">Dedicated experiences tailored for both customers and tanker partners.</p>
           </div>
           <div className="p-2 glass border-slate-200 rounded-2xl flex gap-2">
             <button 

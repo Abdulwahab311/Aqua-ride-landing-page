@@ -10,25 +10,25 @@ const ProcessSteps = () => {
       title: "Place Your Order", 
       desc: "Select location and choose between Standard or 30-min Urgent delivery priority.", 
       icon: MapPin, 
-      color: "from-blue-400 to-primary" 
+      color: "from-primary to-accent" 
     },
     { 
       title: "Driver Matching", 
       desc: "System detects nearby drivers and assigns your order to the first to accept.", 
       icon: Zap, 
-      color: "from-primary to-secondary" 
+      color: "from-primary to-accent" 
     },
     { 
       title: "Live Tracking", 
       desc: "Track location, route, and dynamic ETA in real-time as the tanker moves.", 
       icon: Clock, 
-      color: "from-secondary to-accent" 
+      color: "from-primary to-accent" 
     },
     { 
       title: "Delivery Phases", 
       desc: "Monitor lifecycle stages: Accept, En Route, Arrived, and Complete.", 
       icon: Truck, 
-      color: "from-accent to-blue-600",
+      color: "from-primary to-accent",
       stepLabel: "Then"
     }
   ];
@@ -42,7 +42,7 @@ const ProcessSteps = () => {
           <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6 text-[#03045E]">
             A SMART <span className="text-[#00B4D8]">ECOSYSTEM</span>
           </h2>
-          <p className="text-[#00B4D8] font-bold tracking-[0.2em] uppercase text-xs italic">"Water delivery redefined by AquaRide."</p>
+          <p className="text-slate-500 font-bold tracking-[0.2em] uppercase text-xs italic">"Water delivery redefined by AquaRide."</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

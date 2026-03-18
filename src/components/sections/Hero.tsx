@@ -8,34 +8,11 @@ import BrandLogo from "../ui/BrandLogo";
 
 const Hero = () => {
   const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
-  const [drops, setDrops] = React.useState<{ id: number; left: string; delay: number; duration: number; size: number; layer: number }[]>([]);
-  const [bubbles, setBubbles] = React.useState<{ id: number; left: string; delay: number; duration: number; size: number }[]>([]);
   const [isIslandExpanded, setIsIslandExpanded] = React.useState(false);
   const [wordIndex, setWordIndex] = React.useState(0);
   const words = ["Supply", "Delivery", "Service", "Ecosystem"];
 
   React.useEffect(() => {
-    // Branded Aqua Drops (Falling)
-    const newDrops = Array.from({ length: 25 }).map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      delay: Math.random() * 10,
-      duration: 3 + Math.random() * 6,
-      size: 12 + Math.random() * 8,
-      layer: i % 3,
-    }));
-    setDrops(newDrops);
-
-    // Rising Tank Bubbles (Atmosphere)
-    const newBubbles = Array.from({ length: 15 }).map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      delay: Math.random() * 5,
-      duration: 5 + Math.random() * 10,
-      size: 4 + Math.random() * 6,
-    }));
-    setBubbles(newBubbles);
-
     const interval = setInterval(() => {
       setIsIslandExpanded(prev => !prev);
       setTimeout(() => setIsIslandExpanded(false), 4000);
@@ -61,7 +38,7 @@ const Hero = () => {
   return (
     <section 
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen pt-32 pb-20 px-6 flex items-center justify-center overflow-hidden bg-slate-950"
+      className="relative min-h-screen pt-44 pb-20 px-6 flex items-center justify-center overflow-hidden bg-slate-950"
     >
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
@@ -75,64 +52,10 @@ const Hero = () => {
           {/* Final Cloudinary Video URL */}
           <source src="https://res.cloudinary.com/dfooxnvcd/video/upload/v1773470991/water_ecixag.mp4" type="video/mp4" />
         </video>
-        {/* Subtle Overlay only if needed for text readability, but leaning towards clear video as requested */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
+        {/* Enhanced gradient overlay for better text/logo prominence */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/80 z-10" />
       </div>
 
-      {/* Branded Aqua Drops (Parallax) */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-20">
-        {drops.map((drop) => (
-          <motion.div
-            key={drop.id}
-            initial={{ y: -100, opacity: 0, rotate: 0 }}
-            animate={{ 
-              y: ["0vh", "110vh"],
-              opacity: drop.layer === 0 ? [0, 0.6, 0] : [0, 0.3, 0],
-              rotate: [0, 15, -15, 0]
-            }}
-            transition={{ 
-              duration: drop.duration,
-              repeat: Infinity,
-              delay: drop.delay,
-              ease: "linear"
-            }}
-            className={`absolute ${drop.layer === 0 ? 'z-20 scale-100' : drop.layer === 1 ? 'z-0 scale-75 blur-[1px]' : '-z-30 scale-50 blur-[3px] opacity-20'}`}
-            style={{
-              left: drop.left,
-              color: '#00B4D8',
-            }}
-          >
-            <Droplets size={drop.size} fill="currentColor" className="opacity-40" />
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Rising Tank Bubbles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden block z-20">
-        {bubbles.map((bubble) => (
-          <motion.div
-            key={bubble.id}
-            initial={{ y: "110vh", opacity: 0 }}
-            animate={{ 
-              y: "-10vh",
-              opacity: [0, 0.3, 0],
-              x: [0, 20, -20, 0]
-            }}
-            transition={{ 
-              duration: bubble.duration,
-              repeat: Infinity,
-              delay: bubble.delay,
-              ease: "easeInOut"
-            }}
-            className="absolute rounded-full border border-white/20 bg-white/5"
-            style={{
-              left: bubble.left,
-              width: bubble.size,
-              height: bubble.size,
-            }}
-          />
-        ))}
-      </div>
 
       <div className="max-w-[1200px] mx-auto w-full relative z-30 flex flex-col items-center text-center">
         {/* Content */}
@@ -156,7 +79,7 @@ const Hero = () => {
             >
               <span className="text-[#00B4D8]">Aqua</span>
               <span 
-                className="text-transparent relative tracking-tight -ml-1 sm:-ml-2"
+                className="text-transparent relative tracking-tight"
                 style={{ 
                   WebkitTextStroke: '1.5px rgba(255,255,255,0.8)',
                   textShadow: '0 0 30px rgba(0, 180, 216, 0.4)'

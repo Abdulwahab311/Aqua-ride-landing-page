@@ -60,9 +60,9 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="py-12 px-6 relative overflow-hidden">
+    <section id="faq" className="py-32 px-6 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
-        <div className="text-center mb-20">
+        <div className="text-center mb-24">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -71,7 +71,7 @@ const FAQ = () => {
             <HelpCircle className="w-3.5 h-3.5" />
             Common Questions
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-black text-[#03045E] tracking-tighter uppercase leading-[0.9]">
+          <h2 className="text-4xl md:text-5xl font-black text-[#03045E] tracking-tighter uppercase leading-[1.1]">
             Everything you <br />
             <span className="text-[#00B4D8]">Need to Know</span>
           </h2>

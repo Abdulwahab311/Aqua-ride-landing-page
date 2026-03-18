@@ -13,8 +13,8 @@ const DownloadApp = () => {
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#00B4D8]/10 blur-[100px] rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="max-w-[1400px] mx-auto">
-        <div className=" glass-premium p-12 md:p-24 rounded-[60px] border-white/20 shadow-2xl relative overflow-hidden bg-white/40 backdrop-blur-3xl">
+      <div className="max-w-[1750px] mx-auto">
+        <div className=" glass-premium p-12 md:p-24 rounded-[60px] border-white/20 shadow-xl relative overflow-hidden bg-white/40 backdrop-blur-3xl">
           {/* Section Header */}
           <div className="relative z-10 text-center max-w-3xl mx-auto mb-16">
             <motion.div
@@ -68,44 +68,54 @@ const DownloadApp = () => {
 
             {/* App Download Visual - More relevant to the "download" context */}
             <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="relative max-w-[500px] mx-auto"
+              className="relative max-w-[480px] mx-auto group mt-16"
             >
-              <img 
-                src="/assets/app_download_visual.png" 
-                alt="AquaRide app download progress illustration" 
-                className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,180,216,0.2)] hover:scale-105 transition-transform duration-700"
-              />
+              {/* Refined Glowing Background instead of harsh shadow */}
+              <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full scale-90 group-hover:scale-110 transition-transform duration-1000" />
+              
+              {/* Glass Container to mask image corners */}
+              <div className="relative overflow-hidden rounded-[40px] border border-white/20 shadow-xl bg-white/5 backdrop-blur-sm">
+                <img 
+                  src="/assets/app_download_visual.png" 
+                  alt="AquaRide app download progress illustration" 
+                  className="w-full h-auto transform group-hover:scale-105 transition-transform duration-[2s] ease-out"
+                />
+              </div>
+
+              {/* Decorative Pulsing Accents */}
+              <div className="absolute -top-6 -right-6 w-20 h-20 bg-primary/10 blur-2xl rounded-full animate-pulse" />
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-[#00B4D8]/10 blur-2xl rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
             </motion.div>
           </div>
 
           {/* Feature Highlights beneath buttons */}
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-20 border-t border-slate-200/50">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-4">
-                <Zap size={24} />
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-primary/10 rounded-[22px] flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                <Zap size={32} />
               </div>
-              <h4 className="text-sm font-black text-[#03045E] uppercase tracking-wider mb-2">Instant Booking</h4>
-              <p className="text-xs text-foreground/40 font-bold uppercase tracking-tighter">Order in under 30 seconds</p>
+              <h4 className="text-xl font-black text-[#03045E] uppercase tracking-tight mb-3">Instant Booking</h4>
+              <p className="text-sm text-foreground/50 font-bold uppercase tracking-wider">Order in under 30 seconds</p>
             </div>
             
-            <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-[#00B4D8]/10 rounded-2xl flex items-center justify-center text-[#00B4D8] mb-4">
-                <ShieldCheck size={24} />
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-[#00B4D8]/10 rounded-[22px] flex items-center justify-center text-[#00B4D8] mb-6 group-hover:bg-[#00B4D8] group-hover:text-white transition-all duration-500">
+                <ShieldCheck size={32} />
               </div>
-              <h4 className="text-sm font-black text-[#03045E] uppercase tracking-wider mb-2">Verified Partners</h4>
-              <p className="text-xs text-foreground/40 font-bold uppercase tracking-tighter">Safe & professional drivers</p>
+              <h4 className="text-xl font-black text-[#03045E] uppercase tracking-tight mb-3">Verified Partners</h4>
+              <p className="text-sm text-foreground/50 font-bold uppercase tracking-wider">Safe & professional drivers</p>
             </div>
 
-            <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-4">
-                <Droplets size={24} />
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-primary/10 rounded-[22px] flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                <Droplets size={32} />
               </div>
-              <h4 className="text-sm font-black text-[#03045E] uppercase tracking-wider mb-2">Smart Refills</h4>
-              <p className="text-xs text-foreground/40 font-bold uppercase tracking-tighter">Automated scheduling alerts</p>
+              <h4 className="text-xl font-black text-[#03045E] uppercase tracking-tight mb-3">Smart Refills</h4>
+              <p className="text-sm text-foreground/50 font-bold uppercase tracking-wider">Automated scheduling alerts</p>
             </div>
           </div>
           

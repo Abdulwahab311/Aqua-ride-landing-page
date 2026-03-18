@@ -63,7 +63,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-stretch">
           {serviceCategories.map((category, idx) => (
             <motion.div
               key={idx}
@@ -71,20 +71,20 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="group"
+              className="group flex flex-col h-full"
             >
-              <div className="flex items-center gap-4 mb-8">
+              <div className="flex items-center gap-4 mb-8 min-h-[80px]">
                 <div className="w-16 h-16 rounded-[24px] bg-primary/5 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
                   <category.icon className="text-primary group-hover:text-white transition-colors duration-500 w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-black text-[#03045E] uppercase tracking-tight">{category.title}</h3>
               </div>
               
-              <div className="space-y-6">
+              <div className="grid grid-cols-1 grid-rows-2 gap-6 flex-1">
                 {category.items.map((item, i) => (
                   <div 
                     key={i} 
-                    className={`p-8 rounded-[35px] border transition-all duration-500 hover:shadow-xl ${item.highlight ? 'bg-primary text-white border-primary shadow-[0_20px_40px_-10px_rgba(0,102,255,0.4)]' : 'bg-slate-50 border-slate-100 hover:border-primary/30'}`}
+                    className={`p-8 rounded-[35px] border transition-all duration-500 hover:shadow-xl flex flex-col h-full ${item.highlight ? 'bg-primary text-white border-primary shadow-[0_20px_40px_-10px_rgba(0,102,255,0.4)]' : 'bg-slate-50 border-slate-100 hover:border-primary/30'}`}
                   >
                     <div className="flex justify-between items-start mb-4">
                       <h4 className={`text-xl font-black tracking-tight uppercase ${item.highlight ? 'text-white' : 'text-[#03045E]'}`}>{item.name}</h4>

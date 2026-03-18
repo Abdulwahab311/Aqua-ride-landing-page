@@ -11,8 +11,8 @@ const Contact = () => {
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[#00B4D8]/5 blur-[120px] -z-10 rounded-full" />
       <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-primary/5 blur-[100px] -z-10 rounded-full" />
 
-      <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="max-w-[1750px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           
           {/* Left Column: Content */}
           <motion.div
@@ -55,10 +55,10 @@ const Contact = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative lg:pt-11"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-[#00B4D8] to-primary opacity-5 blur-[100px] -z-10" />
-            <div className="bg-white/80 backdrop-blur-2xl p-10 md:p-14 rounded-[50px] border border-white shadow-2xl relative overflow-hidden">
+            <div className="bg-white/80 backdrop-blur-2xl p-10 md:p-14 rounded-[50px] border border-white shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#00B4D8]/10 rounded-bl-[100px]" />
               
               <form className="space-y-8">

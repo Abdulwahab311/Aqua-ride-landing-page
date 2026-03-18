@@ -34,7 +34,7 @@ const AppShowcase = () => {
         <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#00B4D8]/5 blur-[120px] rounded-full" />
       </div>
 
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1750px] mx-auto">
         <div className="text-center mb-24">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -80,7 +80,7 @@ const AppShowcase = () => {
                 <motion.div 
                   whileHover={{ y: -15, scale: 1.02 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="w-full h-full rounded-[2.5rem] overflow-hidden bg-white shadow-[0_50px_100px_-20px_rgba(0,102,255,0.15)] group-hover:shadow-[0_80px_150px_-30px_rgba(0,102,255,0.25)] transition-all duration-700 relative border border-slate-100"
+                  className="w-full h-full rounded-[2.5rem] overflow-hidden bg-white shadow-[0_20px_50px_-10px_rgba(0,102,255,0.1)] group-hover:shadow-[0_40px_80px_-15px_rgba(0,102,255,0.15)] transition-all duration-700 relative border border-slate-100"
                 >
                   <Image
                     src={feature.image}
