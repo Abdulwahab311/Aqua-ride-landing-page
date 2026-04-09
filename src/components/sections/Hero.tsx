@@ -1,188 +1,164 @@
 "use client";
 
 import React from "react";
+import { MapPin } from "lucide-react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Play, Clock, Truck, MapPin, Droplets } from "lucide-react";
-import Link from "next/link";
-import BrandLogo from "../ui/BrandLogo";
+import { motion } from "framer-motion";
 
 const Hero = () => {
-  const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
-  const [isIslandExpanded, setIsIslandExpanded] = React.useState(false);
-  const [wordIndex, setWordIndex] = React.useState(0);
-  const words = ["Supply", "Delivery", "Service", "Ecosystem"];
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setIsIslandExpanded(prev => !prev);
-      setTimeout(() => setIsIslandExpanded(false), 4000);
-    }, 8000);
-
-    const wordTimer = setInterval(() => {
-      setWordIndex((prev) => (prev + 1) % words.length);
-    }, 3000); // Standardized at 3s for professional feel
-
-    return () => {
-      clearInterval(interval);
-      clearInterval(wordTimer);
-    };
-  }, []);
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const { clientX, clientY } = e;
-    const moveX = (clientX - window.innerWidth / 2) / 50;
-    const moveY = (clientY - window.innerHeight / 2) / 50;
-    setMousePos({ x: moveX, y: moveY });
-  };
-
   return (
-    <section 
-      onMouseMove={handleMouseMove}
-      className="relative min-h-screen pt-44 pb-20 flex items-center justify-center overflow-hidden bg-slate-950"
+    <section
+      className="relative pt-20 pb-56 sm:pb-64 md:pb-80 lg:pb-96 xl:pb-[350px] overflow-hidden flex flex-col items-center"
+      style={{ background: 'linear-gradient(186.67deg, #01B7E7 -22.96%, #1DBCDC 36.33%)' }}
     >
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+
+      {/* Content */}
+      <div className="relative z-40 flex flex-col items-center text-center px-6 max-w-4xl mx-auto mt-10">
+
+        {/* Top Tagline */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex items-center justify-center gap-3 md:gap-4 mb-6"
         >
-          {/* Final Cloudinary Video URL */}
-          <source src="https://res.cloudinary.com/dfooxnvcd/video/upload/v1773470991/water_ecixag.mp4" type="video/mp4" />
-        </video>
-        {/* Enhanced gradient overlay for better text/logo prominence */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/80 z-10" />
-      </div>
-
-
-      <div className="max-w-[1200px] mx-auto w-full px-6 relative z-30 flex flex-col items-center text-center">
-        {/* Content */}
-        <motion.div className="flex flex-col items-center">
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-3 px-6 py-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full w-fit mb-10 shadow-xl"
-          >
-            <div className="w-2.5 h-2.5 bg-[#00B4D8] animate-pulse rounded-full shadow-[0_0_10px_rgba(0,180,216,0.5)]" />
-            <span className="text-white font-bold tracking-[0.15em] uppercase text-xs">
-              AquaRide Delivery - Water Tanker Orchestration
-            </span>
-          </motion.div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-[-0.04em] leading-[1.1] sm:leading-[0.9] mb-8 uppercase flex flex-col text-white drop-shadow-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex flex-wrap items-center justify-center gap-y-2"
-            >
-              <span className="text-[#00B4D8]">Aqua</span>
-              <span 
-                className="text-transparent relative tracking-tight"
-                style={{ 
-                  WebkitTextStroke: '1.5px rgba(255,255,255,0.8)',
-                  textShadow: '0 0 30px rgba(0, 180, 216, 0.4)'
-                }}
-              >
-                Ride
-              </span>
-            </motion.div>
-            <div className="flex flex-wrap items-center justify-center gap-x-4 lg:gap-x-6 gap-y-2 mt-2">
-              <span 
-                className="text-transparent relative tracking-tight"
-                style={{ 
-                  WebkitTextStroke: '1.5px rgba(255,255,255,0.8)',
-                }}
-              >
-                Water
-              </span>
-              <div className="relative inline-flex items-center">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={words[wordIndex]}
-                    initial={{ y: "40%", opacity: 0, filter: "blur(10px)" }}
-                    animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                    exit={{ y: "-40%", opacity: 0, filter: "blur(10px)" }}
-                    transition={{ 
-                      duration: 0.8, 
-                      ease: [0.16, 1, 0.3, 1] 
-                    }}
-                    className="text-[#00B4D8] whitespace-nowrap"
-                  >
-                    {words[wordIndex]}
-                  </motion.span>
-                </AnimatePresence>
-              </div>
-            </div>
-          </h1>
-
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-xl text-white/70 max-w-2xl leading-relaxed mb-16 font-medium tracking-tight mx-auto drop-shadow-lg"
-          >
-            AquaRide modernizes the water tanker ecosystem. We digitize water delivery by connecting customers with reliable tanker partners in real-time.
-          </motion.p>
-
-          {/* Hero CTA Button */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="mb-12"
-          >
-            <Link 
-              href="#download"
-              className="group relative inline-flex items-center gap-3 px-10 py-5 bg-[#00B4D8] text-white rounded-full font-black uppercase tracking-[0.2em] text-sm shadow-[0_20px_40px_-10px_rgba(0,180,216,0.5)] hover:bg-[#03045E] hover:scale-105 transition-all duration-500"
-            >
-              Get Started
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              <div className="absolute inset-0 rounded-full bg-white/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-            </Link>
-          </motion.div>
+            initial={{ width: 0 }}
+            animate={{ width: "2rem" }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="h-[1px] bg-white/40 md:!w-12"
+          />
+          <span className="text-white/90 font-serif italic tracking-wider text-sm md:text-2xl drop-shadow-sm text-center">Ghana&apos;s #1 Water Tanker Delivery</span>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "2rem" }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="h-[1px] bg-white/40 md:!w-12"
+          />
+        </motion.div>
 
-          {/* Mouse Scroller */}
+        {/* Live Pill */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.5, type: "spring", stiffness: 200 }}
+          className="bg-white/20 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 md:px-5 md:py-2.5 flex items-center justify-center gap-1.5 md:gap-2 text-white text-[9px] md:text-xs mb-8 md:mb-10 shadow-lg flex-wrap"
+        >
+          <span className="tracking-wide">We are live in Ghana</span>
+          <MapPin className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#FBBF24]" fill="#FBBF24" strokeWidth={1} />
+          <span className="font-bold text-[#FBBF24] tracking-wide">Accra - Kumasi - Takoradi</span>
+          <span className="text-sm">🇬🇭</span>
+        </motion.div>
+
+        {/* Title */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-[22px] md:text-4xl lg:text-5xl font-bold font-serif tracking-tight text-white leading-[1.15] mb-5 md:mb-6 drop-shadow-md"
+        >
+          Clean Water, Delivered <span className="text-[#FBBF24]">Fast & Safe</span>
+          <br />
+          Across Ghana.
+        </motion.h1>
+
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.6 }}
+          className="text-white/95 text-[13px] md:text-[17px] max-w-3xl mx-auto leading-relaxed mb-8 md:mb-12 font-medium drop-shadow-sm px-2"
+        >
+          Tankers deliver clean water to your home, school, or business — on demand or on your schedule, anywhere in Accra, Kumasi and Takoradi.
+        </motion.p>
+
+        {/* Store Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.9 }}
+          className="flex flex-col sm:flex-row items-center gap-4 relative z-50"
+        >
           <motion.button
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-            className="group flex flex-col items-center gap-4 cursor-pointer mb-16"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-[#111111] hover:bg-black text-white px-6 py-2.5 rounded-[14px] flex items-center gap-3 transition-colors shadow-xl border border-white/10"
           >
-            <span className="text-[10px] font-black text-white/40 uppercase tracking-[0.4em] group-hover:text-[#00B4D8] transition-colors">Scroll</span>
-            <div className="w-6 h-10 border-2 border-white/20 rounded-full p-1.5 flex justify-center group-hover:border-[#00B4D8] transition-colors">
-              <motion.div 
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                className="w-1 h-2 bg-white/40 rounded-full group-hover:bg-[#00B4D8] transition-colors"
-              />
+            <svg viewBox="0 0 384 512" className="w-6 h-6 fill-current">
+              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+            </svg>
+            <div className="flex flex-col items-start px-2">
+              <span className="text-[9px] font-semibold text-white/80 leading-tight tracking-wider">Download on the</span>
+              <span className="text-[17px] font-bold leading-tight tracking-tight">App Store</span>
             </div>
           </motion.button>
-
-          <div className="flex items-center justify-center gap-8 sm:gap-16">
-            <div className="flex flex-col items-center">
-              <span className="text-3xl sm:text-4xl font-black text-white">500+</span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#00B4D8]">Partners</span>
+          <motion.button
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-[#111111] hover:bg-black text-white px-6 py-2.5 rounded-[14px] flex items-center gap-3 transition-colors shadow-xl border border-white/10"
+          >
+            <svg viewBox="0 0 512 512" className="w-6 h-6 fill-current">
+              <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/>
+            </svg>
+            <div className="flex flex-col items-start px-2">
+              <span className="text-[9px] font-semibold text-white/80 leading-tight tracking-wider uppercase">Get it on</span>
+              <span className="text-[17px] font-bold leading-tight tracking-tight">Google Play</span>
             </div>
-            <div className="w-px h-12 bg-white/20" />
-            <div className="flex flex-col items-center">
-              <span className="text-3xl sm:text-4xl font-black text-white">50k+</span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#00B4D8]">Deliveries</span>
-            </div>
-            <div className="w-px h-12 bg-white/20" />
-            <div className="flex flex-col items-center">
-              <span className="text-3xl sm:text-4xl font-black text-white">4.9/5</span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#00B4D8]">Rating</span>
-            </div>
-          </div>
+          </motion.button>
         </motion.div>
       </div>
+
+      {/* Hero Images */}
+      <div className="absolute bottom-0 left-0 right-0 w-full h-[20%] sm:h-[25%] md:h-[30%] lg:h-[35%] xl:h-[40%] pointer-events-none z-20">
+        <div className="max-w-[1400px] mx-auto h-full relative">
+          {/* Left: Man with hose */}
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 1.2, type: "spring", stiffness: 60 }}
+            className="absolute bottom-0 left-0 w-[140px] sm:w-[220px] md:w-[280px] lg:w-[340px] xl:w-[400px]"
+          >
+            <img
+              src="/assets/mane.png"
+              alt="AquaRide Driver"
+              className="w-full h-auto object-contain object-bottom"
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+            />
+          </motion.div>
+
+          {/* Right: Tanker Truck */}
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 1.4, type: "spring", stiffness: 60 }}
+            className="absolute bottom-0 right-0 w-[180px] sm:w-[280px] md:w-[380px] lg:w-[500px] xl:w-[650px]"
+          >
+            <img
+              src="/assets/trucker.png"
+              alt="AquaRide Truck"
+              className="w-full h-auto object-contain object-bottom"
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+            />
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Bottom Soft Edge / Wave */}
+      <div className="absolute bottom-[-1px] left-0 right-0 w-full z-30 pointer-events-none">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250" className="w-full h-auto fill-white mt-20">
+          <path fillOpacity="1" d="M0,192L80,186.7C160,181,320,171,480,176C640,181,800,203,960,208C1120,213,1280,203,1360,197.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        </svg>
+      </div>
+
+      {/* Background Soft Wave (Opacity layer) */}
+      <div className="absolute bottom-0 left-0 right-0 w-full z-10 pointer-events-none opacity-30">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto fill-[#FDFDFD]">
+          <path fillOpacity="1" d="M0,224L60,213.3C120,203,240,181,360,186.7C480,192,600,224,720,234.7C840,245,960,235,1080,213.3C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+        </svg>
+      </div>
+
     </section>
   );
 };
 
 export default Hero;
-// 

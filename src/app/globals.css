@@ -9,6 +9,8 @@
   --color-foreground: #03045E;
   --color-card: #F8FAFC;
   --color-border: #E1E1E1;
+  --font-serif: var(--font-cormorant);
+  --font-manrope: var(--font-manrope);
 }
 
 :root {
@@ -16,12 +18,28 @@
   --foreground: #03045E;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+@media (min-width: 1920px) {
+  body {
+    box-shadow: 0 0 80px rgba(0,0,0,0.05);
+  }
+  html {
+    background-color: #f0f4f8;
+  }
 }
 
 button,
@@ -31,6 +49,14 @@ a {
 }
 
 @layer utilities {
+  .font-manrope {
+    font-family: var(--font-manrope);
+  }
+
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+
   .glass {
     @apply bg-white/70 backdrop-blur-xl border border-slate-200/50 shadow-sm;
   }
@@ -62,6 +88,35 @@ a {
 
   .shadow-premium {
     box-shadow: 0 25px 50px -12px rgba(0, 180, 216, 0.08);
+  }
+}
+
+/* Shimmer / skeleton animations */
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shimmer-text {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@layer utilities {
+  .animate-shimmer-sweep {
+    animation: shimmer-sweep 1.8s ease-in-out infinite;
+  }
+
+  .animate-shimmer-text {
+    animation: shimmer-text 3s ease-in-out infinite;
   }
 }
 

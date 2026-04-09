@@ -1,149 +1,143 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Droplets, Menu, X } from "lucide-react";
 import Link from "next/link";
+import { Phone, Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import BrandLogo from "../ui/BrandLogo";
 
-const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
+const navLinks = [
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "Services", href: "#services" },
+  { label: "Who we serve", href: "#who-we-serve" },
+  { label: "Testimonials", href: "#testimonials" },
+];
 
-  const navItems = [
-    { name: "Home", id: "home" },
-    { name: "About", id: "about" },
-    { name: "Features", id: "features" },
-    { name: "FAQs", id: "faq" }
-  ];
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-      
-      const sections = navItems.filter(item => item.id).map(item => document.getElementById(item.id!));
-      const scrollPos = window.scrollY + 100;
-
-      sections.forEach(section => {
-        if (section && scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
-          setActiveSection(section.id);
-        }
-      });
-      if (window.scrollY < 100) setActiveSection("home");
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  return (
-    <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${(isScrolled || mobileMenuOpen || !isHomePage) ? "py-4 bg-white/80 backdrop-blur-xl border-b border-slate-200" : "py-6 bg-transparent"}`}>
-      <div className="max-w-[1750px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-3 items-center">
-        {/* Logo (Left) */}
-        <div className="flex justify-start">
-          <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3 cursor-pointer group">
-            <motion.div 
-              initial={{ scale: 0, rotate: -20 }}
-              animate={{ scale: 1, rotate: 0 }}
-              className="w-8 h-8 relative flex items-center justify-center transition-transform group-hover:scale-110"
-            >
-              <BrandLogo size={32} />
-            </motion.div>
-            <motion.span 
-              initial={{ opacity: 0, x: -10, filter: "blur(10px)" }}
-              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-              className="text-xl font-bold tracking-tight text-[#00B4D8]"
-            >
-              AquaRide
-            </motion.span>
-          </Link>
-        </div>
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-        {/* Nav Items (Center - Desktop Only) */}
-        <div className={`hidden lg:flex items-center justify-center gap-8 text-[13px] font-black uppercase tracking-[0.15em] font-[family-name:var(--font-outfit)] transition-colors duration-500 ${isScrolled || !isHomePage ? "text-slate-500" : "text-white"}`}>
-          {navItems.map((item) => (
-            <Link
-              key={item.id || item.name}
-              href={item.id === "home" ? "#" : `/#${item.id}`}
-              onClick={(e) => {
-                if (item.id === "home") {
-                  e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }
-              }}
-              className={`relative py-2 transition-all duration-300 hover:text-[#00B4D8] ${activeSection === (item.id === "home" ? "home" : item.id) ? "text-[#00B4D8]" : ""} ${!isScrolled ? "drop-shadow-md" : ""}`}
+  return (
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+      className={`fixed top-0 left-0 right-0 z-50 w-full max-w-[1920px] mx-auto py-4 md:py-6 px-6 md:px-12 text-white transition-all duration-500 ${
+        scrolled ? "bg-[#0A2540]/90 backdrop-blur-xl shadow-2xl py-3 md:py-4" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-[1400px] mx-auto flex items-center justify-between">
+        {/* Brand */}
+        <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
+          <BrandLogo size={32} variant="white" />
+          <span className="text-2xl font-bold tracking-tight text-white drop-shadow-md">AquaRide</span>
+        </Link>
+
+        {/* Desktop Links */}
+        <div className="hidden lg:flex items-center gap-10">
+          {navLinks.map((link, i) => (
+            <motion.a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 + i * 0.1 }}
+              className="text-[13px] text-white/90 font-medium hover:text-white transition-colors drop-shadow-sm cursor-pointer relative group"
             >
-              {item.name}
-              {activeSection === (item.id === "home" ? "home" : item.id) && (
-                <motion.div 
-                  layoutId="activeNav"
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-[#00B4D8] rounded-full"
-                />
-              )}
-            </Link>
+              {link.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#FBBF24] transition-all duration-300 group-hover:w-full rounded-full" />
+            </motion.a>
           ))}
         </div>
 
-        {/* Desktop CTA & Mobile Menu Toggle (Right) */}
-        <div className="flex items-center justify-end gap-6">
-          <Link 
-            href="#download"
-            className={`hidden lg:flex items-center gap-2 px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all duration-300 shadow-lg ${isScrolled || !isHomePage ? "bg-primary text-white hover:bg-[#03045E]" : "bg-white text-primary hover:bg-[#00B4D8] hover:text-white"}`}
+        {/* Actions */}
+        <div className="flex items-center gap-4">
+          <motion.a
+            href="tel:+2330302000000"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/30 text-white text-[13px] hover:bg-white/10 transition-colors drop-shadow-sm"
           >
-            Get Started
-          </Link>
+            <Phone className="w-[14px] h-[14px]" />
+            <span>Call Now</span>
+          </motion.a>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link href="#" className="hidden sm:block px-8 py-2.5 rounded-full bg-[#FBBF24] text-[#050F1A] text-[13px] font-bold hover:bg-[#FCD34D] transition-all shadow-lg hover:shadow-xl">
+              Sign in
+            </Link>
+          </motion.div>
 
-          <button 
-            className={`lg:hidden cursor-pointer transition-colors duration-500 ${isScrolled || mobileMenuOpen || !isHomePage ? "text-slate-900" : "text-white"}`}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          {/* Hamburger Button - Mobile */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="lg:hidden p-2 rounded-xl hover:bg-white/10 transition-colors"
           >
-            {mobileMenuOpen ? <X /> : <Menu className={!isScrolled && isHomePage ? "drop-shadow-md" : ""} />}
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div 
+        {menuOpen && (
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white backdrop-blur-2xl border-b border-slate-200 overflow-hidden"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="lg:hidden absolute top-full left-0 right-0 bg-[#0A2540]/95 backdrop-blur-xl border-t border-white/10 px-8 py-6 flex flex-col gap-1 overflow-hidden"
           >
-            <div className="p-8 flex flex-col gap-6 text-center font-black uppercase tracking-[0.15em] text-[13px] font-[family-name:var(--font-outfit)]">
-              {navItems.map((item) => (
-                <Link
-                  key={item.id || item.name}
-                  href={item.id === "home" ? "#" : `/#${item.id}`}
-                  onClick={(e) => {
-                    setMobileMenuOpen(false);
-                    if (item.id === "home") {
-                      e.preventDefault();
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }
-                  }}
-                  className={`transition-colors ${activeSection === (item.id === "home" ? "home" : item.id) ? "text-[#00B4D8]" : "text-slate-600"}`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Link 
-                href="#download"
-                onClick={() => setMobileMenuOpen(false)}
-                className="mt-4 px-8 py-4 bg-primary text-white rounded-full text-center font-black uppercase tracking-widest shadow-xl shadow-primary/20"
+            {navLinks.map((link, i) => (
+              <motion.a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleLinkClick(e, link.href)}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.08 }}
+                className="text-white/90 text-base font-medium py-3 px-4 rounded-xl hover:bg-white/10 transition-colors cursor-pointer"
               >
-                Get Started
+                {link.label}
+              </motion.a>
+            ))}
+            <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-white/10">
+              <a href="tel:+2330302000000" className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/30 text-white text-sm hover:bg-white/10 transition-colors">
+                <Phone className="w-4 h-4" />
+                <span>Call Now</span>
+              </a>
+              <Link href="#" className="text-center px-8 py-3 rounded-xl bg-[#FBBF24] text-[#050F1A] text-sm font-bold hover:bg-[#FCD34D] transition-all">
+                Sign in
               </Link>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
 

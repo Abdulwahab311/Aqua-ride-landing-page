@@ -1,91 +1,149 @@
 "use client";
 
 import React from "react";
-import { Linkedin, Facebook, Mail, MapPin, Instagram, Youtube } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import BrandLogo from "../ui/BrandLogo";
 
 const Footer = () => {
   return (
-    <footer className="py-24 relative overflow-hidden bg-white border-t border-slate-100">
-      <div className="max-w-[1750px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-20">
-        {/* Brand Column */}
-        <div className="flex flex-col">
-          <div className="flex items-center gap-3 mb-6">
-            <BrandLogo size={32} />
-            <span className="text-xl font-bold tracking-tight text-[#00B4D8]">AquaRide</span>
-          </div>
-          <p className="text-slate-500 max-w-xs font-medium leading-relaxed">
-            Making water delivery work for everyone.
-          </p>
-        </div>
-
-        {/* Contact Column */}
-        <div className="flex flex-col">
-          <h4 className="font-black uppercase tracking-widest text-xs mb-8 text-[#00B4D8]">Contact</h4>
-          <div className="space-y-6">
-            <a href="mailto:hello@aquaride.com" className="flex items-center gap-4 group text-slate-600 hover:text-[#00B4D8] transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-[#00B4D8]/10 transition-colors">
-                <Mail className="w-5 h-5 text-slate-400 group-hover:text-[#00B4D8] transition-colors" />
-              </div>
-              <span className="font-medium">hello@aquaride.com</span>
-            </a>
-            <div className="flex items-start gap-4 text-slate-600">
-              <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
-                <MapPin className="w-5 h-5 text-slate-400" />
-              </div>
-              <span className="font-medium leading-relaxed pt-2">
-                Accra, Ghana
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* News Column */}
-        <div className="flex flex-col">
-          <h4 className="font-black uppercase tracking-widest text-xs mb-8 text-[#00B4D8]">Latest News</h4>
-          <p className="text-slate-500 font-medium text-xs mb-6 uppercase tracking-wider">Stay updated with our progress.</p>
-          <div className="relative group">
-            <input 
-              type="email" 
-              placeholder="Your email address" 
-              className="w-full bg-slate-50 border border-slate-100 rounded-2xl py-4 pl-6 pr-14 text-sm font-medium focus:outline-none focus:border-[#00B4D8] focus:ring-4 focus:ring-[#00B4D8]/5 transition-all outline-none"
-            />
-            <button className="absolute right-2 top-2 bottom-2 aspect-square bg-[#00B4D8] text-white rounded-xl flex items-center justify-center hover:bg-[#03045E] transition-colors shadow-lg shadow-[#00B4D8]/20">
-              <Mail className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-
-        {/* Follow Us Column */}
-        <div className="flex flex-col">
-          <h4 className="font-black uppercase tracking-widest text-xs mb-8 text-[#00B4D8]">Follow Us</h4>
-          <div className="flex gap-4 items-center">
-            {[
-              { icon: Linkedin, href: "#" },
-              { icon: Facebook, href: "#" },
-              { icon: Youtube, href: "#" },
-              { icon: Instagram, href: "#" }
-            ].map((social, i) => (
-              <a 
-                key={i} 
-                href={social.href} 
-                className="w-12 h-12 rounded-2xl border border-slate-100 flex items-center justify-center hover:bg-[#00B4D8]/10 hover:border-[#00B4D8] group transition-all duration-300 shadow-sm"
-              >
-                <social.icon className="w-5 h-5 text-slate-400 group-hover:text-[#00B4D8] transition-colors" />
-              </a>
-            ))}
-          </div>
-        </div>
+    <footer className="relative bg-[#050F1A] text-slate-300 font-sans">
+      {/* Top Colorful Lines */}
+      <div className="flex h-3 w-full">
+        <motion.div initial={{ width: 0 }} whileInView={{ width: "33.33%" }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="bg-[#E53935]" />
+        <motion.div initial={{ width: 0 }} whileInView={{ width: "33.33%" }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="bg-[#FBBF24]" />
+        <motion.div initial={{ width: 0 }} whileInView={{ width: "33.33%" }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }} className="bg-[#4CAF50]" />
       </div>
 
-      {/* Bottom Bar */}
-      <div className="max-w-[1750px] mx-auto px-6 mt-20 pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]">
-        <span>© 2026 AquaRide. All Rights Reserved.</span>
-        <div className="flex gap-10">
-          <Link href="/privacy-policy" className="hover:text-[#00B4D8] transition-colors">Privacy Policy</Link>
-          <Link href="/terms-and-conditions" className="hover:text-[#00B4D8] transition-colors">Terms of Service</Link>
-        </div>
+      <div className="max-w-[1400px] mx-auto px-4 md:px-12 py-12 md:py-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16"
+        >
+          {/* Brand Column */}
+          <div className="md:col-span-4 flex flex-col">
+            <div className="flex items-center gap-3 mb-6">
+              <BrandLogo size={36} />
+              <div className="flex flex-col">
+                <span className="text-2xl font-semibold tracking-tight text-white">
+                  Aqua<span className="text-[#00B4D8]">Ride</span>
+                </span>
+                <span className="text-[#FBBF24] text-[11px] font-medium leading-none italic mt-1 font-serif tracking-wide">
+                  Water Tanker Delivery
+                </span>
+              </div>
+            </div>
+
+            <p className="text-[#FFFFFF80] text-sm mb-8 leading-loose max-w-[340px]">
+              Safe, GWCL-verified water delivered to homes, schools, and businesses across Ghana. Proudly serving Ghana 🇬🇭
+            </p>
+
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 text-sm">
+                <Phone className="w-4 h-4 text-[#00B4D8]" />
+                <span className="text-[#FFFFFF80]">+233 (0) 302 000 000</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm">
+                <Mail className="w-4 h-4 text-[#00B4D8]" />
+                <span className="text-[#FFFFFF80]">hello@aquaride.com.gh</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm">
+                <MapPin className="w-4 h-4 text-[#00B4D8]" />
+                <span className="text-[#FFFFFF80]">Airport City, Accra, Ghana</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="md:col-span-1 hidden md:block"></div>
+
+          {/* Links Columns */}
+          <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8 pt-4">
+            <div className="flex flex-col">
+              <h4 className="font-semibold text-white mb-6 text-[15px]">Services</h4>
+              <div className="flex flex-col gap-4 text-sm text-[#FFFFFF80]">
+                <Link href="#" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Urgent Delivery</Link>
+                <Link href="#" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Standard Delivery</Link>
+              </div>
+            </div>
+
+            <div className="flex flex-col">
+              <h4 className="font-semibold text-white mb-6 text-[15px]">Company</h4>
+              <div className="flex flex-col gap-4 text-sm text-[#FFFFFF80]">
+                <Link href="#" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">How It Works</Link>
+                <Link href="#" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Who we serve</Link>
+              </div>
+            </div>
+
+            <div className="flex flex-col mt-8 md:mt-0">
+              <h4 className="font-semibold text-white mb-6 text-[15px]">Support</h4>
+              <div className="flex flex-col gap-4 text-sm text-[#FFFFFF80]">
+                <Link href="#" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Download App</Link>
+                <Link href="#" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Contact Us</Link>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="w-full h-px bg-slate-800/60 my-10" />
+
+        {/* Serving Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center justify-center"
+        >
+          <span className="text-slate-500 text-[11px] font-bold tracking-[0.15em] uppercase mb-6">Serving</span>
+          <div className="flex flex-wrap justify-center gap-4 px-4">
+            {["📍 Accra", "📍 Kumasi", "📍 Takoradi", "📍 Tema", "📍 Cape Coast"].map((city, i) => (
+              <motion.div
+                key={city}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, type: "spring", stiffness: 200 }}
+                whileHover={{ scale: 1.08, y: -3 }}
+                className="flex items-center gap-2 bg-[#0C1520] border border-[#00B4D8]/20 rounded-full px-5 py-2.5 hover:border-[#00B4D8]/50 transition-colors cursor-default"
+              >
+                <span className="text-sm font-medium text-[#00B4D8]">{city}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <div className="w-full h-px bg-slate-800/60 my-10" />
+
+        {/* Bottom Bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <p className="text-slate-500/80 text-[13px] text-center md:text-left">
+            © 2026 AquaRide Ghana Ltd. All rights reserved. • Proudly serving Ghana 🇬🇭
+          </p>
+
+          <div className="flex items-center gap-4">
+            {[Facebook, Twitter, Instagram, Youtube].map((Icon, i) => (
+              <motion.a
+                key={i}
+                href="#"
+                whileHover={{ scale: 1.15, y: -3 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-12 h-12 rounded-[16px] bg-[#09121D] border border-white/10 flex items-center justify-center text-[#FFFFFF80] hover:text-white hover:bg-[#0D1A27] transition-all"
+              >
+                <Icon className="w-5 h-5" strokeWidth={1.5} />
+              </motion.a>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </footer>
   );
