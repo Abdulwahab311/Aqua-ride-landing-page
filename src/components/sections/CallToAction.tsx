@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const CallToAction = () => {
   return (
-    <section className="relative py-16 md:py-24 px-4 md:px-6 overflow-hidden border-none outline-none">
+    <section id="download" className="relative py-16 md:py-24 px-4 md:px-6 overflow-hidden border-none outline-none">
       {/* Background with Wave Texture */}
       <div className="absolute inset-0">
         <Image

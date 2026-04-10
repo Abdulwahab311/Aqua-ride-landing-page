@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Facebook, Twitter, Instagram, Youtube, Mail, MapPin, Phone } from "lucide-react";
-import Link from "next/link";
+
 import { motion } from "framer-motion";
 import BrandLogo from "../ui/BrandLogo";
 
@@ -65,24 +65,24 @@ const Footer = () => {
             <div className="flex flex-col">
               <h4 className="font-semibold text-white mb-6 text-[15px]">Services</h4>
               <div className="flex flex-col gap-4 text-sm text-[#FFFFFF80]">
-                <Link href="#" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Urgent Delivery</Link>
-                <Link href="#" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Standard Delivery</Link>
+                <a href="#delivery-modes" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Urgent Delivery</a>
+                <a href="#delivery-modes" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Standard Delivery</a>
               </div>
             </div>
 
             <div className="flex flex-col">
               <h4 className="font-semibold text-white mb-6 text-[15px]">Company</h4>
               <div className="flex flex-col gap-4 text-sm text-[#FFFFFF80]">
-                <Link href="#" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">How It Works</Link>
-                <Link href="#" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Who we serve</Link>
+                <a href="#how-it-works" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">How It Works</a>
+                <a href="#who-we-serve" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Who we serve</a>
               </div>
             </div>
 
             <div className="flex flex-col mt-8 md:mt-0">
               <h4 className="font-semibold text-white mb-6 text-[15px]">Support</h4>
               <div className="flex flex-col gap-4 text-sm text-[#FFFFFF80]">
-                <Link href="#" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Download App</Link>
-                <Link href="#" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Contact Us</Link>
+                <a href="#download" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Download App</a>
+                <a href="#how-it-works" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Contact Us</a>
               </div>
             </div>
           </div>

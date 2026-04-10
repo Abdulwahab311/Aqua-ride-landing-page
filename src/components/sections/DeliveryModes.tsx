@@ -7,7 +7,7 @@ import { CheckCircle2, Zap, ShieldCheck, Clock } from "lucide-react";
 
 const DeliveryModes = () => {
   return (
-    <section className="py-16 md:py-24 px-4 md:px-6 bg-[#F8FDFF] overflow-hidden">
+    <section id="delivery-modes" className="py-16 md:py-24 px-4 md:px-6 bg-[#F8FDFF] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.p 

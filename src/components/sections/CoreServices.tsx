@@ -103,8 +103,8 @@ const CoreServices = () => {
           className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-[1200px] mx-auto"
         >
           {services.map((service) => (
+            <a key={service.title} href="#delivery-modes">
             <motion.div
-              key={service.title}
               variants={cardVariants}
               whileHover={{ y: -10, scale: 1.03, transition: { duration: 0.3 } }}
               className="bg-white border border-gray-100 p-6 md:p-8 rounded-[32px] transition-shadow duration-300 group text-left flex flex-col items-start hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] cursor-pointer w-full max-w-[284px] mx-auto h-[304px]"
@@ -124,6 +124,7 @@ const CoreServices = () => {
                 {service.desc}
               </p>
             </motion.div>
+            </a>
           ))}
         </motion.div>
       </div>
