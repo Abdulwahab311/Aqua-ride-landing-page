@@ -76,7 +76,7 @@ const LoadingScreen = () => {
               transition={{ duration: 0.8, ease: [0.13, 1, 0.23, 1] }}
               className="absolute top-0"
             >
-              <BrandLogo size={60} variant="white" />
+              <BrandLogo size={60} />
             </motion.div>
           )}
 
@@ -101,7 +101,7 @@ const LoadingScreen = () => {
                   animate={{ scale: 1.2, opacity: 1 }}
                   transition={{ type: "spring", stiffness: 200, damping: 15 }}
                 >
-                  <BrandLogo size={80} variant="white" />
+                  <BrandLogo size={80} />
                 </motion.div>
               </>
             )}
