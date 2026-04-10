@@ -44,7 +44,7 @@ const Navbar = () => {
       <div className="max-w-[1400px] mx-auto flex items-center justify-between">
         {/* Brand */}
         <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
-          <BrandLogo size={32} variant="white" />
+          <BrandLogo size={32} />
           <span className="text-2xl font-bold tracking-tight text-white drop-shadow-md">AquaRide</span>
         </Link>
 

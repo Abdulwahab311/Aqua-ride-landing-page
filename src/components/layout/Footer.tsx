@@ -82,7 +82,7 @@ const Footer = () => {
               <h4 className="font-semibold text-white mb-6 text-[15px]">Support</h4>
               <div className="flex flex-col gap-4 text-sm text-[#FFFFFF80]">
                 <a href="#testimonials" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Download App</a>
-                <a href="#how-it-works" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Contact Us</a>
+                <a href="/contact-us" className="hover:text-white transition-colors hover:translate-x-1 transform duration-200">Contact Us</a>
               </div>
             </div>
           </div>
