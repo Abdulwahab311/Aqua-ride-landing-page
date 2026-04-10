@@ -75,7 +75,7 @@ const Navbar = () => {
             transition={{ delay: 0.8 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full border-1 border-[#FFFFFF] text-white text-[13px] hover:bg-white/10 transition-colors drop-shadow-sm"
+            className="hidden md:flex items-center justify-center gap-2 w-[120px] h-[40px] rounded-full border-1 border-[#FFFFFF] text-white text-[13px] hover:bg-white/10 transition-colors drop-shadow-sm"
           >
             <Phone className="w-[14px] h-[14px]" />
             <span>Call Now</span>
@@ -87,7 +87,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link href="#" className="hidden sm:block px-8 py-2.5 rounded-full bg-[#FBBF24] text-[#050F1A] text-[13px] font-bold hover:bg-[#FCD34D] transition-all shadow-lg hover:shadow-xl">
+            <Link href="#" className="hidden sm:flex items-center justify-center w-[120px] h-[40px] rounded-full bg-[#FBBF24] text-[#050F1A] text-[13px] font-bold hover:bg-[#FCD34D] transition-all shadow-lg hover:shadow-xl">
               Sign in
             </Link>
           </motion.div>
