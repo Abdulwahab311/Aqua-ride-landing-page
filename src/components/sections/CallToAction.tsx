@@ -6,8 +6,8 @@ import Image from "next/image";
 
 const CallToAction = () => {
   return (
-    <section className="relative py-16 md:py-24 px-4 md:px-6 overflow-hidden border-none outline-none">
-      {/* Background with Wave Texture */}
+    <section className="relative py-16 md:py-24 px-4 md:px-6 overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0">
         <Image
           src="/assets/dark.jpg"
@@ -16,7 +16,7 @@ const CallToAction = () => {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #1DABBA 0%, #1DBCDC 60%, #1FAFBE 100%)', opacity: 0.5 }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #1DABBA 0%, #1DBCDC 60%, #1FAFBE 100%)', opacity: 0.68 }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto text-center flex flex-col items-center">

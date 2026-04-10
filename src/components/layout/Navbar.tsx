@@ -41,15 +41,15 @@ const Navbar = () => {
         scrolled ? "bg-[#0A2540]/90 backdrop-blur-xl shadow-2xl py-3 md:py-4" : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1400px] mx-auto flex items-center justify-between">
+      <div className="max-w-[1440px] mx-auto flex items-center justify-between">
         {/* Brand */}
         <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
           <BrandLogo size={32} />
-          <span className="text-2xl font-bold tracking-tight text-white drop-shadow-md">AquaRide</span>
+          <span className="text-[20px] font-semibold tracking-tight text-white" style={{ fontFamily: 'var(--font-inter)' }}>AquaRide</span>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-10">
+        <div className="hidden lg:flex items-center w-[414px] h-[20px] gap-[32px]">
           {navLinks.map((link, i) => (
             <motion.a
               key={link.href}
@@ -58,7 +58,8 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + i * 0.1 }}
-              className="text-[13px] text-[#FFFFFF] font-medium hover:text-white transition-colors drop-shadow-sm cursor-pointer relative group"
+              className="text-[14px] text-white font-medium hover:text-white transition-colors cursor-pointer relative group whitespace-nowrap"
+              style={{ fontFamily: 'var(--font-inter)' }}
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#FBBF24] transition-all duration-300 group-hover:w-full rounded-full" />
@@ -67,7 +68,7 @@ const Navbar = () => {
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-[16px]">
           <motion.a
             href="tel:+2330302000000"
             initial={{ opacity: 0 }}
@@ -75,7 +76,8 @@ const Navbar = () => {
             transition={{ delay: 0.8 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:flex items-center justify-center gap-2 w-[120px] h-[40px] rounded-full border-1 border-[#FFFFFF] text-white text-[13px] hover:bg-white/10 transition-colors drop-shadow-sm"
+            className="hidden md:flex items-center justify-center gap-2 w-[120px] h-[40px] rounded-full border border-white/60 text-white text-[14px] font-medium hover:bg-white/10 transition-colors"
+            style={{ fontFamily: 'var(--font-inter)' }}
           >
             <Phone className="w-[14px] h-[14px]" />
             <span>Call Now</span>
@@ -87,7 +89,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link href="#" className="hidden sm:flex items-center justify-center w-[120px] h-[40px] rounded-full bg-[#FBBF24] text-[#050F1A] text-[13px] font-bold hover:bg-[#FCD34D] transition-all shadow-lg hover:shadow-xl">
+            <Link href="#" className="hidden sm:flex items-center justify-center w-[120px] h-[40px] rounded-full bg-[#FBBF24] text-[#050F1A] text-[14px] font-semibold hover:bg-[#FCD34D] transition-all" style={{ fontFamily: 'var(--font-inter)' }}>
               Sign in
             </Link>
           </motion.div>

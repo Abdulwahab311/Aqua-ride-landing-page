@@ -8,7 +8,7 @@ const sectors = [
   {
     title: "Homes",
     emoji: "🏠",
-    desc: "Clean water for your family every day",
+    desc: "Clean water for your family\nevery day",
     image: "/assets/serve-family.jpg",
     color: "#1FAFBE",
     tagBg: "bg-[#1FAFBE]/90"
@@ -17,7 +17,7 @@ const sectors = [
     title: "Schools",
     emoji: "🏫",
     desc: "Safe water for children that learn",
-    image: "/assets/serve-hospital.jpg",
+    image: "/assets/school.png",
     color: "#006B3D",
     tagBg: "bg-[#006B3D]/90"
   },
@@ -73,7 +73,7 @@ const WhoWeServe = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-[52px] font-black text-[#0A2540] mb-6 font-manrope"
+            className="text-2xl md:text-[40px] font-black text-[#0A2540] mb-6 font-manrope"
           >
             Water For Everyone in Ghana
           </motion.h2>
@@ -82,7 +82,7 @@ const WhoWeServe = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-[#0A254099] max-w-2xl mx-auto font-medium leading-relaxed"
+            className="text-[#0A254099] max-w-2xl text-[18px] mx-auto font-medium leading-relaxed"
           >
             From families in Accra to hospitals in Kumasi — AquaRide serves all.
           </motion.p>
@@ -126,7 +126,7 @@ const WhoWeServe = () => {
               </div>
 
               {/* Text Bottom Half */}
-              <div className="p-4 pb-5 md:p-8 md:pb-10 text-left bg-white relative">
+              <div className="p-4 pb-5 md:p-8 md:pb-4 text-left bg-white relative">
                 {/* Colored Accent line */}
                 <motion.div
                   initial={{ width: 0 }}
@@ -136,7 +136,7 @@ const WhoWeServe = () => {
                   className="absolute top-0 left-0 h-1"
                   style={{ backgroundColor: sector.color }}
                 />
-                <p className="text-[#0A2540BF] text-[15px] font-medium leading-[1.6]">
+                <p className="text-[#0A2540BF] text-[15px] font-medium leading-[1.6] whitespace-pre-line">
                   {sector.desc}
                 </p>
               </div>

@@ -11,7 +11,7 @@ import {
 const services = [
   {
     title: "Standard Delivery",
-    desc: "Reliable water delivery scheduled at your convenience.",
+    desc: "Reliable water delivery scheduled at your\u00A0convenience.",
     icon: Clock,
     color: "text-white",
     bgColor: "bg-[#2DB1DB]",
@@ -27,7 +27,7 @@ const services = [
   },
   {
     title: "Weekly Refills",
-    desc: "Automated weekly water delivery for your household or business.",
+    desc: "Automated weekly water delivery for your household or business..",
     image: "/assets/Iconsj.png",
     color: "text-black",
     bgColor: "bg-[#FCD116]",
@@ -107,7 +107,7 @@ const CoreServices = () => {
             <motion.div
               variants={cardVariants}
               whileHover={{ y: -10, scale: 1.03, transition: { duration: 0.3 } }}
-              className="bg-white border border-gray-100 p-6 md:p-8 rounded-[32px] transition-shadow duration-300 group text-left flex flex-col items-start hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] cursor-pointer w-full max-w-[284px] mx-auto h-[304px]"
+              className="bg-white border border-gray-100 p-6 md:p-8 rounded-[32px] transition-shadow duration-300 group text-left flex flex-col items-start hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] cursor-pointer w-full max-w-[284px] mx-auto h-[250px]"
             >
               <motion.div
                 whileHover={{ rotate: [0, -10, 10, -5, 0], transition: { duration: 0.5 } }}

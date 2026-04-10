@@ -15,7 +15,7 @@ const services = [
     tagColor: "bg-[#CE1126]",
     iconBg: "bg-[#CE1126]",
     textColor: "text-[#1F2937]",
-    borderColor: "border-[#CE112614]",
+    borderColor: "border-[#CE112660]",
     hoverShadow: "hover:shadow-red-100",
   },
   {
@@ -28,7 +28,7 @@ const services = [
     tagColor: "bg-[#1FAFBE]",
     iconBg: "bg-[#1FAFBE]",
     textColor: "text-[#1F2937]",
-    borderColor: "border-[#1FAFBE14]",
+    borderColor: "border-[#1FAFBE60]",
     hoverShadow: "hover:shadow-blue-100",
   },
   {
@@ -41,7 +41,7 @@ const services = [
     tagColor: "bg-[#006B3F]",
     iconBg: "bg-[#006B3F]",
     textColor: "text-[#1F2937]",
-    borderColor: "border-[#006B3F14]",
+    borderColor: "border-[#006B3F60]",
     hoverShadow: "hover:shadow-green-100",
   },
 ];
@@ -59,7 +59,7 @@ const QuickServices = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8 }}
-              className={`${service.bgColor} ${service.borderColor} border-[1.5px] rounded-[16px] w-full max-w-[330px] mx-auto md:max-w-none h-[91px] flex items-center gap-3 px-4 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.06)] relative overflow-hidden group transition-all duration-300 ${service.hoverShadow} hover:shadow-2xl cursor-pointer`}
+              className={`${service.bgColor} ${service.borderColor} border-[1.5px] rounded-[16px] w-full max-w-[330px] mx-auto md:max-w-none h-[91px] flex items-center gap-3 px-4 relative overflow-hidden group transition-all duration-300 cursor-pointer`}
             >
               {/* Icon Container */}
               <div className={`${service.iconBg} p-2.5 rounded-[12px] text-white shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>

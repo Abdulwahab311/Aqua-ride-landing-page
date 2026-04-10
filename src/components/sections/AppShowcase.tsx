@@ -75,7 +75,7 @@ const AppShowcase = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[#1FAFBE] text-[11px] font-black uppercase tracking-[0.2em] mb-3"
+            className="text-[#1DBCDC] text-[11px] font-black uppercase tracking-[0.2em] mb-3"
           >
             MOBILE APP
           </motion.p>
@@ -116,7 +116,7 @@ const AppShowcase = () => {
                       <img src={feature.icon} alt={feature.title} className="w-6 h-6" />
                     )}
                   </div>
-                  <h3 className="text-2xl lg:text-[29.44px] font-black text-[#0A2540] mb-2 leading-none">{feature.title}</h3>
+                  <h3 className="text-2xl lg:text-[29.44px] font-black text-[#0F172B] mb-2 leading-none">{feature.title}</h3>
                   <p className="text-[#0A254099] text-[13px] font-medium leading-relaxed max-w-[220px]">
                     {feature.desc}
                   </p>
@@ -163,7 +163,7 @@ const AppShowcase = () => {
                   <div className={`${feature.bgColor} p-3.5 rounded-xl mb-5 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
                     <img src={feature.icon} alt={feature.title} className="w-6 h-6" />
                   </div>
-                  <h3 className="text-2xl lg:text-[29.44px] font-black text-[#0A2540] mb-2 leading-none">{feature.title}</h3>
+                  <h3 className="text-2xl lg:text-[29.44px] font-black text-[#0F172B] mb-2 leading-none">{feature.title}</h3>
                   <p className="text-[#0A254099] text-[13px] font-medium leading-relaxed max-w-[220px]">
                     {feature.desc}
                   </p>
