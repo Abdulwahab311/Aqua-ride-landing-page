@@ -69,7 +69,7 @@ const Testimonials = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[#FCD116] text-[11px] font-black uppercase tracking-[0.25em] mb-4"
+            className="text-[#FCD116] text-[11px] font-black uppercase tracking-[0.25em] mb-4 w-[270px] h-[20px] mx-auto"
           >
             REAL PEOPLE. REAL STORIES.
           </motion.p>
@@ -89,7 +89,7 @@ const Testimonials = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-white/60 text-sm mt-3"
+            className="text-[#FFFFFF] text-sm mt-3"
           >
             Serving Accra, Kumasi, Takoradi
           </motion.p>
@@ -137,8 +137,8 @@ const Testimonials = () => {
                   {t.avatar}
                 </motion.div>
                 <div>
-                  <p className="text-[#0A2540] text-sm font-bold">{t.name}</p>
-                  <p className="text-[#0A254099] text-[11px]">{t.role}</p>
+                  <p className="text-[#FFFFFF] text-sm font-bold">{t.name}</p>
+                  <p className="text-[#FFFFFF] text-[11px]">{t.role}</p>
                 </div>
               </div>
             </motion.div>

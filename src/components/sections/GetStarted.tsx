@@ -3,12 +3,13 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  User, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Lock, 
-  Truck, 
+  CircleUserRound,
+  User,
+  Phone,
+  Mail,
+  MapPin,
+  Lock,
+  Truck,
   ChevronRight,
   UserCheck,
   ChevronLeft
@@ -40,7 +41,7 @@ const GetStarted = () => {
         style={{ backgroundColor: '#BEDBFF' }}
       />
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <div className="max-w-[864px] mx-auto text-center relative z-10">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-[#0A2540] mb-3">
           Get Started Today
@@ -57,7 +58,7 @@ const GetStarted = () => {
               activeTab === "owner" ? "text-white" : "text-[#0A254099]"
             }`}
           >
-            <User className="w-4 h-4" />
+            <CircleUserRound className="w-4 h-4" />
             Manage your Trucks
             {activeTab === "owner" && (
               <motion.div
@@ -88,7 +89,7 @@ const GetStarted = () => {
         </div>
 
         {/* Form Card */}
-        <div className="bg-white rounded-[24px]  overflow-hidden text-left border border-gray-100 max-w-3xl mx-auto">
+        <div className="bg-white rounded-[24px] overflow-hidden text-left border border-gray-100 max-w-3xl mx-auto shadow-[0_15px_50px_-10px_rgba(0,107,174,0.1)]">
           {/* Card Header */}
           <div 
             className="pt-6 pb-2 px-6 text-white relative"
@@ -96,7 +97,7 @@ const GetStarted = () => {
           >
             <div className="flex items-center gap-4 mb-4">
               <div className="bg-white/20 p-2.5 rounded-xl backdrop-blur-sm">
-                <Truck className="w-6 h-6" />
+               {activeTab === "owner" ? <CircleUserRound className="w-4 h-4" /> : <Truck className="w-4 h-4" />}
               </div>
               <div>
                 <h3 className="text-xl font-bold leading-tight">
@@ -119,7 +120,7 @@ const GetStarted = () => {
                     className={`h-[7px] flex-1 rounded-full transition-all duration-500 ${step >= 2 ? 'bg-[#FBBC05]' : 'bg-white/20'}`} 
                   />
                 </div>
-                <div className="flex justify-between mt-3 mb-1 text-[11px] font-bold uppercase tracking-wider text-white/90">
+                <div className="flex justify-between mt-3 mb-1 text-[11px] font-bold uppercase tracking-wider text-[#FFFFFF]">
                   <span className={step === 1 ? "opacity-100" : "opacity-60"}>Personal Info</span>
                   <span className={step === 2 ? "opacity-100" : "opacity-60"}>Truck Details</span>
                 </div>
@@ -143,14 +144,14 @@ const GetStarted = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {/* Name & Phone */}
                       <div className="space-y-2">
-                        <label className="text-sm font-bold text-[#0A2540]">Full Name *</label>
+                        <label className="text-sm font-bold text-[#0A2540] w-[77px] h-[20px]">Full Name *</label>
                         <div className="relative">
                           <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                           <input type="text" placeholder="John Mensah" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-bold text-[#0A2540]">Phone Number *</label>
+                        <label className="text-sm font-bold text-[#0A2540] w-[77px] h-[20px]">Phone Number *</label>
                         <div className="relative">
                           <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                           <input type="tel" placeholder="+233 24 000 0000" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
@@ -159,7 +160,7 @@ const GetStarted = () => {
 
                       {/* Email */}
                       <div className="space-y-2 md:col-span-2">
-                        <label className="text-sm font-bold text-[#0A2540]">Email Address *</label>
+                        <label className="text-sm font-bold text-[#0A2540] w-[77px] h-[20px]">Email Address *</label>
                         <div className="relative">
                           <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                           <input type="email" placeholder="john@example.com" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
@@ -168,30 +169,29 @@ const GetStarted = () => {
 
                       {/* City & Address */}
                       <div className="space-y-2">
-                        <label className="text-sm font-bold text-[#0A2540]">City *</label>
+                        <label className="text-sm font-bold text-[#0A2540] w-[77px] h-[20px]">City *</label>
                         <div className="relative">
                           <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                           <input type="text" placeholder="City" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-bold text-[#0A2540]">Delivery Address *</label>
+                        <label className="text-sm font-bold text-[#0A2540] w-[77px] h-[20px]">Delivery Address *</label>
                         <div className="relative">
-                          <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                           <input type="text" placeholder="Enter your address" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                         </div>
                       </div>
 
                       {/* Passwords */}
                       <div className="space-y-2">
-                        <label className="text-sm font-bold text-[#0A2540]">Password *</label>
+                        <label className="text-sm font-bold text-[#0A2540] w-[77px] h-[20px]">Password *</label>
                         <div className="relative">
                           <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                           <input type="password" placeholder="Create password" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-bold text-[#0A2540]">Confirm Password *</label>
+                        <label className="text-sm font-bold text-[#0A2540] w-[77px] h-[20px]">Confirm Password *</label>
                         <div className="relative">
                           <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                           <input type="password" placeholder="Confirm password" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
@@ -202,17 +202,16 @@ const GetStarted = () => {
                     <div className="flex items-center gap-2 pt-2">
                       <input type="checkbox" id="terms-owner" className="w-4 h-4 rounded border-gray-300 text-[#4BBDDF]" required />
                       <label htmlFor="terms-owner" className="text-xs font-medium text-[#0A254099]">
-                        I agree to the <span className="text-[#4BBDDF] font-bold underline cursor-pointer">Terms of Service</span> and <span className="text-[#4BBDDF] font-bold underline cursor-pointer">Privacy Policy</span>
+                        I agree to the <a href="/terms-and-conditions" target="_blank" className="text-[#155DFC] font-bold underline cursor-pointer">Terms of Service</a> and <a href="/privacy-policy" target="_blank" className="text-[#155DFC] font-bold underline cursor-pointer">Privacy Policy</a>
                       </label>
                     </div>
 
                     <button type="submit" className="w-full text-white font-bold py-4 rounded-xl shadow-lg shadow-[#4BBDDF2a] transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2" style={{ background: primaryGradient }}>
                       Create Account
-                      <ChevronRight className="w-5 h-5" />
                     </button>
 
                     <p className="text-center text-sm font-medium text-[#0A254099] mt-6">
-                      Already have an account? <span className="text-[#4BBDDF] font-bold underline cursor-pointer">Sign in.</span>
+                      Already have an account? <span className="text-[#155DFC] font-bold  cursor-pointer">Sign in.</span>
                     </p>
                   </form>
                 </motion.div>
@@ -227,43 +226,42 @@ const GetStarted = () => {
                 >
                   {step === 1 ? (
                     <>
-                      <h4 className="text-lg font-bold text-[#0A2540] mb-1">Personal Information</h4>
+                      <h4 className="text-lg font-bold text-[#0A2540] mb-1 w-[247px] h-[32px]">Personal Information</h4>
                       <p className="text-[#0A254099] text-[13px] font-medium mb-8">Tell us about yourself</p>
 
                       <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); handleNext(); }}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-2">
-                            <label className="text-sm font-bold text-[#0A2540]">Full Name *</label>
+                            <label className="text-sm font-bold text-[#0A2540] w-[77px] h-[20px]">Full Name *</label>
                             <div className="relative">
                               <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                               <input type="text" placeholder="John Mensah" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                             </div>
                           </div>
                           <div className="space-y-2">
-                            <label className="text-sm font-bold text-[#0A2540]">Phone Number *</label>
+                            <label className="text-sm font-bold text-[#0A2540] w-[77px] h-[20px]">Phone Number *</label>
                             <div className="relative">
                               <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                               <input type="tel" placeholder="+233 24 000 0000" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                             </div>
                           </div>
                           <div className="space-y-2 md:col-span-2">
-                            <label className="text-sm font-bold text-[#0A2540]">Email Address *</label>
+                            <label className="text-sm font-bold text-[#0A2540] w-[77px] h-[20px]">Email Address *</label>
                             <div className="relative">
                               <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                               <input type="email" placeholder="john@example.com" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                             </div>
                           </div>
                           <div className="space-y-2">
-                            <label className="text-sm font-bold text-[#0A2540]">City *</label>
+                            <label className="text-sm font-bold text-[#0A2540] w-[77px] h-[20px]">City *</label>
                             <div className="relative">
                               <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                               <input type="text" placeholder="City" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                             </div>
                           </div>
                           <div className="space-y-2">
-                            <label className="text-sm font-bold text-[#0A2540]">Residential Address *</label>
+                            <label className="text-sm font-bold text-[#0A2540] w-[77px] h-[20px]">Residential Address *</label>
                             <div className="relative">
-                              <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                               <input type="text" placeholder="Enter your address" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-11 pr-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                             </div>
                           </div>
@@ -275,51 +273,51 @@ const GetStarted = () => {
                     </>
                   ) : (
                     <>
-                      <h4 className="text-lg font-bold text-[#0A2540] mb-1">Truck Information</h4>
+                      <h4 className="text-lg font-bold text-[#0A2540] mb-1 w-[211px] h-[32px]">Truck Information</h4>
                       <p className="text-[#0A254099] text-[13px] font-medium mb-8">Details about your vehicle</p>
 
                       <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-2">
-                            <label className="text-sm font-bold text-[#0A2540]">Truck Capacity *</label>
+                            <label className="text-sm font-bold text-[#0A2540] w-[113px] h-[20px]">Truck Capacity *</label>
                             <input type="text" placeholder="e.g. 3000 Gallons" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                           </div>
                           <div className="space-y-2">
-                            <label className="text-sm font-bold text-[#0A2540]">Truck Model/Make *</label>
+                            <label className="text-sm font-bold text-[#0A2540] w-[113px] h-[20px]">Truck Model/Make *</label>
                             <input type="text" placeholder="e.g. Mercedes-Benz 1518" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                           </div>
                           <div className="space-y-2">
-                            <label className="text-sm font-bold text-[#0A2540]">License Plate Number *</label>
+                            <label className="text-sm font-bold text-[#0A2540] w-[113px] h-[20px]">License Plate Number *</label>
                             <input type="text" placeholder="GR-1234-20" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                           </div>
                           <div className="space-y-2">
-                            <label className="text-sm font-bold text-[#0A2540]">Driver's License Number *</label>
+                            <label className="text-sm font-bold text-[#0A2540] w-[113px] h-[20px]">Driver's License Number *</label>
                             <input type="text" placeholder="Enter license number" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" required />
                           </div>
                         </div>
 
                         <div>
-                          <h4 className="text-base font-bold text-[#0A2540] mb-1 flex items-center gap-2">
-                            Business Information <span className="text-[10px] bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full uppercase">Optional</span>
+                          <h4 className="text-base font-bold text-[#0A2540] mb-1 flex items-center gap-2 w-[246px] h-[28px]">
+                            Business Information <span className="text-[10px] text-gray-400 rounded-full uppercase">( Optional )</span>
                           </h4>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                             <div className="space-y-2">
-                              <label className="text-sm font-bold text-[#0A2540]">Business Name</label>
+                              <label className="text-sm font-bold text-[#0A2540] w-[113px] h-[20px]">Business Name</label>
                               <input type="text" placeholder="Your business name" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" />
                             </div>
                             <div className="space-y-2">
-                              <label className="text-sm font-bold text-[#0A2540]">Registration Number</label>
+                              <label className="text-sm font-bold text-[#0A2540] w-[113px] h-[20px]">Registration Number</label>
                               <input type="text" placeholder="Business reg. number" className="w-full bg-white border border-gray-200 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:border-[#4BBDDF] transition-all font-medium text-[#0A2540]" />
                             </div>
                           </div>
                         </div>
 
                         <div className="flex gap-4 pt-4">
-                          <button type="button" onClick={handleBack} className="flex-[0.4] bg-white border border-gray-200 text-[#0A254099] font-bold py-4 rounded-xl transition-all hover:bg-gray-50 flex items-center justify-center gap-2">
+                          <button type="button" onClick={handleBack} className="w-[389px] h-[56px] bg-white border border-gray-200 text-[#0A254099] font-bold rounded-xl transition-all hover:bg-gray-50 flex items-center justify-center gap-2">
                             <ChevronLeft className="w-5 h-5" />
                             Back
                           </button>
-                          <button type="submit" className="flex-[1] text-white font-bold py-4 rounded-xl shadow-lg transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2" style={{ background: primaryGradient }}>
+                          <button type="submit" className="w-[389px] h-[56px] text-white font-bold rounded-xl shadow-lg transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2" style={{ background: primaryGradient }}>
                             Continue
                             <ChevronRight className="w-5 h-5" />
                           </button>

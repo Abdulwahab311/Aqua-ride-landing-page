@@ -58,7 +58,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + i * 0.1 }}
-              className="text-[13px] text-white/90 font-medium hover:text-white transition-colors drop-shadow-sm cursor-pointer relative group"
+              className="text-[13px] text-[#FFFFFF] font-medium hover:text-white transition-colors drop-shadow-sm cursor-pointer relative group"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#FBBF24] transition-all duration-300 group-hover:w-full rounded-full" />
@@ -75,7 +75,7 @@ const Navbar = () => {
             transition={{ delay: 0.8 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/30 text-white text-[13px] hover:bg-white/10 transition-colors drop-shadow-sm"
+            className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full border-1 border-[#FFFFFF] text-white text-[13px] hover:bg-white/10 transition-colors drop-shadow-sm"
           >
             <Phone className="w-[14px] h-[14px]" />
             <span>Call Now</span>

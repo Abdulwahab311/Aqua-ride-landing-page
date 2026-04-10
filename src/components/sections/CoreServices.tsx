@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import {
   Clock,
   Zap,
-  CalendarDays,
   RefreshCcw
 } from "lucide-react";
 
@@ -29,7 +28,7 @@ const services = [
   {
     title: "Weekly Refills",
     desc: "Automated weekly water delivery for your household or business.",
-    icon: CalendarDays,
+    image: "/assets/Iconsj.png",
     color: "text-black",
     bgColor: "bg-[#FCD116]",
     delay: 0.3
@@ -90,7 +89,7 @@ const CoreServices = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-[#0A254099] max-w-2xl mx-auto font-medium leading-relaxed"
+            className="text-[#0A254099] max-w-2xl mx-auto font-medium leading-relaxed font-inter"
           >
             Choose the delivery option that best fits your needs. From urgent deliveries to subscription plans, we&apos;ve got you covered with GWCL-verified water.
           </motion.p>
@@ -101,22 +100,26 @@ const CoreServices = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-[1200px] mx-auto"
         >
           {services.map((service) => (
             <motion.div
               key={service.title}
               variants={cardVariants}
               whileHover={{ y: -10, scale: 1.03, transition: { duration: 0.3 } }}
-              className="bg-white border border-gray-100 p-8 rounded-[32px] transition-shadow duration-300 group text-left flex flex-col items-start hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] cursor-pointer"
+              className="bg-white border border-gray-100 p-6 md:p-8 rounded-[32px] transition-shadow duration-300 group text-left flex flex-col items-start hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] cursor-pointer w-full max-w-[284px] mx-auto h-[304px]"
             >
               <motion.div
                 whileHover={{ rotate: [0, -10, 10, -5, 0], transition: { duration: 0.5 } }}
                 className={`${service.bgColor} ${service.color} p-4 rounded-xl mb-6 shadow-md`}
               >
-                <service.icon className="w-6 h-6" />
+                {service.image ? (
+                  <img src={service.image} alt={service.title} className="w-6 h-6 object-contain" />
+                ) : service.icon ? (
+                  <service.icon className="w-6 h-6" />
+                ) : null}
               </motion.div>
-              <h3 className="text-lg font-black text-[#0A2540] mb-3 uppercase tracking-tight">{service.title}</h3>
+              <h3 className="text-lg font-black text-[#0A2540] mb-3 uppercase tracking-tight font-manrope">{service.title}</h3>
               <p className="text-[#0A254080] text-[13px] font-medium leading-relaxed">
                 {service.desc}
               </p>

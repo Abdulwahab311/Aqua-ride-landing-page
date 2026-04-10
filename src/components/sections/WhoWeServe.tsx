@@ -65,7 +65,7 @@ const WhoWeServe = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[#1FAFBE] text-[11px] font-black uppercase tracking-[0.2em] mb-4"
+            className="text-[#1FAFBE] text-[11px] font-black uppercase tracking-[0.2em] mb-4 w-[144px] h-[20px] mx-auto"
           >
             WHO WE SERVE
           </motion.p>
@@ -101,7 +101,7 @@ const WhoWeServe = () => {
               variants={cardVariants}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className="group relative flex flex-col rounded-[32px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] bg-white transition-shadow duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.1)] cursor-pointer"
-              style={{ borderBottom: `4px solid ${sector.color}1A` }}
+              style={{}}
             >
               {/* Image Top Half */}
               <div className="relative h-[140px] md:h-[200px] w-full overflow-hidden">
@@ -119,7 +119,7 @@ const WhoWeServe = () => {
                 />
 
                 {/* Sector Tag on Image */}
-                <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 shadow-lg">
+                <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2 px-3 py-1.5 rounded-xl">
                   <span className="text-base">{sector.emoji}</span>
                   <span className="text-white font-black text-sm tracking-tight">{sector.title}</span>
                 </div>

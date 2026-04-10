@@ -23,7 +23,7 @@ const TechnologyApps = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[#1FAFBE] text-[11px] font-black uppercase tracking-[0.25em] mb-4"
+            className="text-[#1FAFBE] text-[11px] font-black uppercase tracking-[0.25em] mb-4 w-[127px] h-[20px] mx-auto"
           >
             TECHNOLOGY
           </motion.p>
@@ -43,13 +43,14 @@ const TechnologyApps = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-[#0A254099] text-sm md:text-base mt-4 max-w-lg mx-auto"
+            style={{ fontFamily: 'var(--font-cormorant)' }}
           >
             Two powerful apps. One seamless ecosystem. Built for Ghanaian networks and everyday users.
           </motion.p>
         </div>
 
         {/* Apps Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-8 items-center justify-items-center">
           {/* Customer App Card */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -57,7 +58,7 @@ const TechnologyApps = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, type: "spring", stiffness: 80 }}
             whileHover={{ y: -5 }}
-            className="bg-[#E8F8FB] rounded-[20px] md:rounded-[24px] p-6 md:p-8 border border-[#D0F0F6] transition-shadow duration-300 hover:shadow-xl"
+            className="bg-[#E8F8FB] rounded-[20px] md:rounded-[24px] p-6 md:p-8 border border-[#D0F0F6] transition-shadow duration-300 hover:shadow-xl w-[325px] h-[359px]"
           >
             <motion.div
               initial={{ scale: 0 }}
@@ -69,7 +70,7 @@ const TechnologyApps = () => {
               <Smartphone className="w-5 h-5 text-white" />
             </motion.div>
             <h3 className="text-[#0A2540] text-lg font-black mb-2 font-manrope">Customer App</h3>
-            <p className="text-[#0A254099] text-sm mb-8 leading-relaxed">
+            <p className="text-[#0A254099] text-sm mb-8 leading-relaxed" style={{ fontFamily: 'var(--font-cormorant)' }}>
               Everything a Ghanaian household or business needs to stay hydrated.
             </p>
 
@@ -112,7 +113,7 @@ const TechnologyApps = () => {
               <Wifi className="w-7 h-7 text-[#1FAFBE]" />
             </motion.div>
             <span className="text-[#0A2540] text-xs font-bold tracking-wide">Connected</span>
-            <span className="text-[#0A254066] text-[10px] mb-4">Real-time sync</span>
+            <span className="text-[#0A254066] text-[10px] mb-4" style={{ fontFamily: 'var(--font-cormorant)' }}>Real-time sync</span>
 
             {/* Arrows with gradient line */}
             <div className="flex items-center gap-3 mt-2">
@@ -133,7 +134,7 @@ const TechnologyApps = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, type: "spring", stiffness: 80 }}
             whileHover={{ y: -5 }}
-            className="rounded-[20px] md:rounded-[24px] p-6 md:p-8 transition-shadow duration-300 hover:shadow-xl"
+            className="rounded-[20px] md:rounded-[24px] p-6 md:p-8 transition-shadow duration-300 hover:shadow-xl w-[325px] h-[359px]"
             style={{ background: "linear-gradient(135deg, #1DABBA 0%, #1DBCDC 60%, #1FAFBE 100%)" }}
           >
             <motion.div
@@ -146,7 +147,7 @@ const TechnologyApps = () => {
               <Truck className="w-5 h-5 text-[#0A2540]" />
             </motion.div>
             <h3 className="text-white text-lg font-black mb-2 font-manrope">Driver App</h3>
-            <p className="text-white/60 text-sm mb-8 leading-relaxed">
+            <p className="text-white/60 text-sm mb-8 leading-relaxed" style={{ fontFamily: 'var(--font-cormorant)' }}>
               Empowering drivers across Accra, Kumasi & Takoradi to earn more, deliver faster.
             </p>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MapPin } from "lucide-react";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -28,7 +28,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="h-[1px] bg-white/40 md:!w-12"
           />
-          <span className="text-white/90 font-serif italic tracking-wider text-sm md:text-2xl drop-shadow-sm text-center">Ghana&apos;s #1 Water Tanker Delivery</span>
+          <span className="text-[#FFFFFF] font-serif italic tracking-wider text-sm md:text-2xl drop-shadow-sm text-center">Ghana&apos;s #1 Water Tanker Delivery</span>
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: "2rem" }}
@@ -45,8 +45,8 @@ const Hero = () => {
           className="bg-white/20 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 md:px-5 md:py-2.5 flex items-center justify-center gap-1.5 md:gap-2 text-white text-[9px] md:text-xs mb-8 md:mb-10 shadow-lg flex-wrap"
         >
           <span className="tracking-wide">We are live in Ghana</span>
-          <MapPin className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#FBBF24]" fill="#FBBF24" strokeWidth={1} />
-          <span className="font-bold text-[#FBBF24] tracking-wide">Accra - Kumasi - Takoradi</span>
+          <img src="/assets/Icons.png" alt="Location" className="w-3.5 h-4 md:w-4 md:h-5 object-contain" />
+          <span className="font-bold text-[#FBBF24] tracking-wide">Accra . Kumasi . Takoradi</span>
           <span className="text-sm">🇬🇭</span>
         </motion.div>
 
@@ -97,8 +97,11 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className="bg-[#111111] hover:bg-black text-white px-6 py-2.5 rounded-[14px] flex items-center gap-3 transition-colors shadow-xl border border-white/10"
           >
-            <svg viewBox="0 0 512 512" className="w-6 h-6 fill-current">
-              <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/>
+            <svg viewBox="0 0 512 512" className="w-6 h-6">
+              <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1z" fill="#00F076"/>
+              <path d="M47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0z" fill="#2196F3"/>
+              <path d="M472.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8z" fill="#FFC107"/>
+              <path d="M104.6 499l280.8-161.2-60.1-60.1L104.6 499z" fill="#F44336"/>
             </svg>
             <div className="flex flex-col items-start px-2">
               <span className="text-[9px] font-semibold text-white/80 leading-tight tracking-wider uppercase">Get it on</span>
@@ -131,7 +134,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: 80 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 1.4, type: "spring", stiffness: 60 }}
-            className="absolute bottom-0 right-0 w-[180px] sm:w-[280px] md:w-[380px] lg:w-[500px] xl:w-[650px]"
+            className="absolute bottom-2 right-0 w-[180px] sm:w-[280px] md:w-[380px] lg:w-[500px] xl:w-[650px]"
           >
             <img
               src="/assets/trucker.png"

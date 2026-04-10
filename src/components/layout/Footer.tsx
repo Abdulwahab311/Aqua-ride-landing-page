@@ -8,12 +8,12 @@ import BrandLogo from "../ui/BrandLogo";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#050F1A] text-slate-300 font-sans">
+    <footer className="relative bg-[#050F1A] text-slate-300 font-sans overflow-hidden">
       {/* Top Colorful Lines */}
       <div className="flex h-3 w-full">
-        <motion.div initial={{ width: 0 }} whileInView={{ width: "33.33%" }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="bg-[#E53935]" />
-        <motion.div initial={{ width: 0 }} whileInView={{ width: "33.33%" }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="bg-[#FBBF24]" />
-        <motion.div initial={{ width: 0 }} whileInView={{ width: "33.33%" }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }} className="bg-[#4CAF50]" />
+        <div className="flex-1 bg-[#E53935]" />
+        <div className="flex-1 bg-[#FBBF24]" />
+        <div className="flex-1 bg-[#4CAF50]" />
       </div>
 
       <div className="max-w-[1400px] mx-auto px-4 md:px-12 py-12 md:py-16">
@@ -32,7 +32,7 @@ const Footer = () => {
                 <span className="text-2xl font-semibold tracking-tight text-white">
                   Aqua<span className="text-[#00B4D8]">Ride</span>
                 </span>
-                <span className="text-[#FBBF24] text-[11px] font-medium leading-none italic mt-1 font-serif tracking-wide">
+                <span className="text-[#FCD116] text-[12px] leading-[12px] italic mt-1 tracking-[0px]" style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 600 }}>
                   Water Tanker Delivery
                 </span>
               </div>
